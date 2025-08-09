@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7msp6isceecw"]
+
+[ext_resource type="Script" uid="uid://dx1xkhqnfoej0" path="res://Scripts/Player/player.gd" id="1_ft8w5"]
+[ext_resource type="Texture2D" uid="uid://jox5v46xdceq" path="res://Assets/Critters/Kaki.png" id="1_s0eop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0eop"]
+size = Vector2(42, 78)
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_ft8w5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_s0eop")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s0eop")

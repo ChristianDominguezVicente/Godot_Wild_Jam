@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://1jpvaiuk6ppy"]
+
+[ext_resource type="Texture2D" uid="uid://bvgpb7vq5y3wh" path="res://Assets/Obstacles/Waste.png" id="1_d1d4k"]
+
+[node name="Waste" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("1_d1d4k")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.32, 0.32)
+polygon = PackedVector2Array(343, 13.7, 241.2, 87.5, 46.875, 375, 646.875, 375, 629.2, 272.6)

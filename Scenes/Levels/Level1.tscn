@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkggptrnicx"]
+
+[ext_resource type="PackedScene" uid="uid://6rep0cac3re1" path="res://Scenes/Backgrounds/level_background_1.tscn" id="1_riv1q"]
+[ext_resource type="PackedScene" uid="uid://i4njobr6h5qm" path="res://Scenes/StaticObjects/Ground.tscn" id="2_xvio3"]
+[ext_resource type="PackedScene" uid="uid://c7msp6isceecw" path="res://Scenes/Player/Player.tscn" id="3_kri6y"]
+
+[node name="Level1" type="Node"]
+
+[node name="LevelBackground1" parent="." instance=ExtResource("1_riv1q")]
+
+[node name="Ground" parent="." instance=ExtResource("2_xvio3")]
+position = Vector2(0, 8)
+
+[node name="Player" parent="." instance=ExtResource("3_kri6y")]
+position = Vector2(56, 552)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
