@@ -31,7 +31,7 @@ func _ready() -> void:
 	$HudRestart.restart_pressed.connect(start_level)
 	start_level()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(player_ready):
 		main_level_logic()
 	else:
