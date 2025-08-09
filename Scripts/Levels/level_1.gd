@@ -47,6 +47,7 @@ func main_level_logic():
 	generate_obstacle()
 
 	$Player.position.x += speed
+	$Player.speed = speed
 	$Camera2D.position.x += speed
 
 	if $Camera2D.position.x - $Ground.position.x> screen_size.x * 1.5:

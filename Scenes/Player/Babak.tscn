@@ -1,68 +1,69 @@
-[gd_scene load_steps=22 format=3 uid="uid://c7msp6isceecw"]
+[gd_scene load_steps=23 format=3 uid="uid://c7msp6isceecw"]
 
-[ext_resource type="Script" uid="uid://dx1xkhqnfoej0" path="res://Scripts/Player/player.gd" id="1_ft8w5"]
-[ext_resource type="Texture2D" uid="uid://bpoihixtx6wsm" path="res://Assets/Spritesheets/Babak-Idle.png" id="2_ft8w5"]
-[ext_resource type="Texture2D" uid="uid://dqe4fwidfsffc" path="res://Assets/Spritesheets/Babak_Walk.png" id="3_h54ih"]
-[ext_resource type="Script" uid="uid://bwy3n7obj1i6g" path="res://Scripts/Player/health_container.gd" id="4_ude3g"]
+[ext_resource type="Script" uid="uid://dx1xkhqnfoej0" path="res://Scripts/Player/Babak.gd" id="1_20xpu"]
+[ext_resource type="PackedScene" uid="uid://kxrlmc5mas6w" path="res://Scenes/Projectiles/Babak_Spit.tscn" id="2_41rod"]
+[ext_resource type="Texture2D" uid="uid://bpoihixtx6wsm" path="res://Assets/Spritesheets/Babak-Idle.png" id="2_go2b0"]
+[ext_resource type="Texture2D" uid="uid://dqe4fwidfsffc" path="res://Assets/Spritesheets/Babak_Walk.png" id="3_41rod"]
+[ext_resource type="Script" uid="uid://bwy3n7obj1i6g" path="res://Scripts/Player/health_container.gd" id="4_1y8qt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h54ih"]
-atlas = ExtResource("2_ft8w5")
+atlas = ExtResource("2_go2b0")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ude3g"]
-atlas = ExtResource("2_ft8w5")
+atlas = ExtResource("2_go2b0")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jmcll"]
-atlas = ExtResource("2_ft8w5")
+atlas = ExtResource("2_go2b0")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wape"]
-atlas = ExtResource("2_ft8w5")
+atlas = ExtResource("2_go2b0")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t26db"]
-atlas = ExtResource("2_ft8w5")
+atlas = ExtResource("2_go2b0")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fk5o5"]
-atlas = ExtResource("2_ft8w5")
+atlas = ExtResource("2_go2b0")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_825xp"]
-atlas = ExtResource("2_ft8w5")
+atlas = ExtResource("2_go2b0")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ji083"]
-atlas = ExtResource("3_h54ih")
+atlas = ExtResource("3_41rod")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kmp4"]
-atlas = ExtResource("3_h54ih")
+atlas = ExtResource("3_41rod")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i5acl"]
-atlas = ExtResource("3_h54ih")
+atlas = ExtResource("3_41rod")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epg6k"]
-atlas = ExtResource("3_h54ih")
+atlas = ExtResource("3_41rod")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0u84n"]
-atlas = ExtResource("3_h54ih")
+atlas = ExtResource("3_41rod")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esmjy"]
-atlas = ExtResource("3_h54ih")
+atlas = ExtResource("3_41rod")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tu5v"]
-atlas = ExtResource("3_h54ih")
+atlas = ExtResource("3_41rod")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spxdj"]
-atlas = ExtResource("3_h54ih")
+atlas = ExtResource("3_41rod")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ji083"]
@@ -126,10 +127,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0eop"]
 size = Vector2(18.6667, 24)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Babak" type="CharacterBody2D"]
 z_index = 1
 scale = Vector2(1.5, 1.5)
-script = ExtResource("1_ft8w5")
+script = ExtResource("1_20xpu")
+projectile = ExtResource("2_41rod")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -140,6 +142,9 @@ frame_progress = 0.494161
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")
+
+[node name="Mouth" type="Marker2D" parent="."]
+position = Vector2(9.33333, 0)
 
 [node name="HealthContainer" type="HBoxContainer" parent="."]
 anchors_preset = 7
@@ -153,7 +158,7 @@ offset_right = 20.0
 offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
-script = ExtResource("4_ude3g")
+script = ExtResource("4_1y8qt")
 
 [node name="1" type="TextureRect" parent="HealthContainer"]
 layout_mode = 2
