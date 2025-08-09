@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cu0mpxcur7ieu"]
+[gd_scene load_steps=14 format=3 uid="uid://cu0mpxcur7ieu"]
 
 [ext_resource type="Script" uid="uid://df8bk3e8eqxm3" path="res://Scripts/Menu/Menu.gd" id="1_1kgdg"]
 [ext_resource type="Script" uid="uid://bs1mqdv6q5s5s" path="res://Scripts/Menu/AudioControl.gd" id="2_3kh17"]
+[ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_kulhe"]
 [ext_resource type="Script" uid="uid://bht0rgxfwih1u" path="res://Scripts/Menu/FullScreenControl.gd" id="3_kqkty"]
+[ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Fonts/JollyLodger-Regular.ttf" id="3_l7xyq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5kka"]
 
@@ -69,7 +71,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y5kka")
 
 [node name="MainButtons" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -91,7 +92,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_y5kka")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
@@ -105,7 +107,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_y5kka")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
@@ -120,7 +123,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_y5kka")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
@@ -142,8 +146,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_l7xyq")
 theme_override_font_sizes/font_size = 100
-text = "Temporal"
+text = "Babak & Co."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -156,6 +161,7 @@ autoplay = true
 bus = &"SFX"
 
 [node name="Settings" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -178,6 +184,7 @@ offset_left = -257.5
 offset_right = 258.5
 offset_bottom = 81.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_l7xyq")
 theme_override_font_sizes/font_size = 35
 text = "Settings"
 horizontal_alignment = 1
@@ -201,7 +208,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_y5kka")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
@@ -229,6 +237,8 @@ theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="Settings/SettingsContainer/Music"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 20
 text = "Music Volume"
 
 [node name="AudioControl" type="HSlider" parent="Settings/SettingsContainer/Music"]
@@ -250,7 +260,9 @@ theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="Settings/SettingsContainer/SFX"]
 layout_mode = 2
-text = "SFX Volume    "
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 20
+text = "SFX Volume "
 
 [node name="AudioControl" type="HSlider" parent="Settings/SettingsContainer/SFX"]
 layout_mode = 2
@@ -267,6 +279,8 @@ audio_bus_name = "SFX"
 
 [node name="FullScreenControl" type="CheckButton" parent="Settings/SettingsContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 20
 text = "FullScreen"
 script = ExtResource("3_kqkty")
 
