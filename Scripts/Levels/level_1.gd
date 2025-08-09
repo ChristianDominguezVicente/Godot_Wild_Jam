@@ -27,6 +27,8 @@ var last_obstacle
 func _ready() -> void:
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
+	$Player.player_dies.connect(game_over)
+	$HudRestart.restart_pressed.connect(start_level)
 	start_level()
 
 func _process(delta: float) -> void:
@@ -35,7 +37,7 @@ func _process(delta: float) -> void:
 	else:
 		if Input.is_action_pressed("action"):
 			player_ready = true
-			$Hud.hide_ready_msg()
+			$HudStart.hide_ready_msg()
 
 func main_level_logic():
 	speed = START_SPEED + score / ACCELERATION
@@ -51,22 +53,28 @@ func main_level_logic():
 		$Ground.position.x += screen_size.x
 
 	score += speed         
-	$Hud.update_score(score / SCORE_INCREASE_SPEED)
+	$HudStart.update_score(score / SCORE_INCREASE_SPEED)
  
 	clear_passed_obs()
 
 func start_level():
 	player_ready = false
 	score = 0
+	clear_all_obs()
+	
+	get_tree().paused = false
 
 	$Player.position = PLAYER_START_LOCATION
 	$Player.velocity = Vector2i(0, 0)
+	$Player.reset()
 	
 	$Camera2D.position = CAM_START_LOCATION
 	$Ground.position = Vector2i(0, 10)
 
-	$Hud.update_score(score)
-	$Hud.show_ready_msg()
+	$HudRestart.hide()
+
+	$HudStart.update_score(score)
+	$HudStart.show_ready_msg()
 
 func generate_obstacle():
 	if obstacles.is_empty() or last_obstacle.position.x < score + randi_range(300, 500):
@@ -82,6 +90,7 @@ func generate_obstacle():
 
 func add_obstacle(obs, x, y):
 	obs.position = Vector2i(x, y)
+	obs.body_entered.connect(hit)
 	last_obstacle = obs
 	add_child(obs)
 	obstacles.append(obs)
@@ -92,6 +101,21 @@ func clear_passed_obs():
 			remove_obs(obs)
 			break
 
+func clear_all_obs():
+	for obs in obstacles:
+		obs.queue_free()
+
+	obstacles.clear()
+
 func remove_obs(obs):
 	obs.queue_free()
 	obstacles.erase(obs)
+	
+func hit(body):
+	if body.name == "Player":
+		$Player.getting_hit(1)
+
+func game_over():
+	get_tree().paused = true
+	player_ready = false
+	$HudRestart.show()

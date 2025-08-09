@@ -1,4 +1,4 @@
-class_name Hud
+class_name HudStart
 extends CanvasLayer
 
 func update_score(score: int) -> void:
