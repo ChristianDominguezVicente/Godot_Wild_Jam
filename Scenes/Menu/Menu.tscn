@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cu0mpxcur7ieu"]
+[gd_scene load_steps=15 format=3 uid="uid://cu0mpxcur7ieu"]
 
 [ext_resource type="Script" uid="uid://df8bk3e8eqxm3" path="res://Scripts/Menu/Menu.gd" id="1_1kgdg"]
 [ext_resource type="Script" uid="uid://bs1mqdv6q5s5s" path="res://Scripts/Menu/AudioControl.gd" id="2_3kh17"]
@@ -6,12 +6,14 @@
 [ext_resource type="Script" uid="uid://bht0rgxfwih1u" path="res://Scripts/Menu/FullScreenControl.gd" id="3_kqkty"]
 [ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="3_l7xyq"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5kka"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_kulhe"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5kka"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5kka"]
+texture = SubResource("CanvasTexture_kulhe")
+modulate_color = Color(0.419608, 0.427451, 0.462745, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kgdg"]
-bg_color = Color(0.796078, 0.796078, 0.796078, 1)
+bg_color = Color(0.170347, 0.264899, 0.299892, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -21,7 +23,7 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kh17"]
-bg_color = Color(0.592157, 0.592157, 0.592157, 1)
+bg_color = Color(0.14854, 0.234481, 0.266272, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -31,7 +33,7 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5kka"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.2, 0.305882, 0.345098, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -40,16 +42,19 @@ shadow_color = Color(0, 0, 0, 0.203922)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kulhe"]
+bg_color = Color(0.217098, 0.222122, 0.244837, 1)
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_1kgdg"]
-color = Color(1, 1, 1, 1)
+color = Color(0.419608, 0.427451, 0.462745, 1)
 thickness = 5
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_3kh17"]
-color = Color(0.133333, 0.498039, 0.937255, 1)
+color = Color(0.988235, 0.74902, 0.717647, 1)
 thickness = 5
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_kqkty"]
-color = Color(0.133333, 0.498039, 0.937255, 1)
+color = Color(0.988235, 0.74902, 0.717647, 1)
 thickness = 5
 
 [node name="Menu" type="Control"]
@@ -88,13 +93,13 @@ theme_override_constants/separation = 10
 [node name="Start" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_y5kka")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
 theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
@@ -103,13 +108,13 @@ text = "Start game"
 [node name="Settings" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_y5kka")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
 theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
@@ -119,13 +124,13 @@ text = "Settings
 [node name="Exit" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_y5kka")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
 theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
@@ -138,16 +143,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -192.5
-offset_top = -273.5
-offset_right = 192.5
-offset_bottom = -160.5
+offset_left = -246.5
+offset_top = -293.5
+offset_right = 246.5
+offset_bottom = -110.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("3_l7xyq")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 150
 text = "Babak & Co."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -174,6 +180,7 @@ offset_right = 259.0
 offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kulhe")
 
 [node name="Label" type="Label" parent="Settings"]
 layout_mode = 1
@@ -184,37 +191,14 @@ offset_left = -257.5
 offset_right = 258.5
 offset_bottom = 81.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
 theme_override_fonts/font = ExtResource("3_l7xyq")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 50
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Back" type="Button" parent="Settings"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -194.0
-offset_top = -87.0
-offset_right = 194.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_kulhe")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_y5kka")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
-text = "Back"
 
 [node name="SettingsContainer" type="VBoxContainer" parent="Settings"]
 layout_mode = 1
@@ -224,9 +208,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -194.0
-offset_top = -35.5
+offset_top = -95.0
 offset_right = 194.0
-offset_bottom = 35.5
+offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
@@ -284,10 +268,25 @@ theme_override_font_sizes/font_size = 20
 text = "FullScreen"
 script = ExtResource("3_kqkty")
 
+[node name="Back" type="Button" parent="Settings/SettingsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_3kh17")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
+text = "Back"
+
 [connection signal="pressed" from="MainButtons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainButtons/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Settings/Back" to="." method="_on_back_settings_pressed"]
 [connection signal="value_changed" from="Settings/SettingsContainer/Music/AudioControl" to="Settings/SettingsContainer/Music/AudioControl" method="_on_value_changed"]
 [connection signal="value_changed" from="Settings/SettingsContainer/SFX/AudioControl" to="Settings/SettingsContainer/SFX/AudioControl" method="_on_value_changed"]
 [connection signal="toggled" from="Settings/SettingsContainer/FullScreenControl" to="Settings/SettingsContainer/FullScreenControl" method="_on_toggled"]
+[connection signal="pressed" from="Settings/SettingsContainer/Back" to="." method="_on_back_settings_pressed"]
