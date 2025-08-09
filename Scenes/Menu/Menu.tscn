@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://df8bk3e8eqxm3" path="res://Scripts/Menu/Menu.gd" id="1_1kgdg"]
 [ext_resource type="Script" uid="uid://bs1mqdv6q5s5s" path="res://Scripts/Menu/AudioControl.gd" id="2_3kh17"]
-[ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_kulhe"]
+[ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_kulhe"]
 [ext_resource type="Script" uid="uid://bht0rgxfwih1u" path="res://Scripts/Menu/FullScreenControl.gd" id="3_kqkty"]
-[ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Fonts/JollyLodger-Regular.ttf" id="3_l7xyq"]
+[ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="3_l7xyq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5kka"]
 

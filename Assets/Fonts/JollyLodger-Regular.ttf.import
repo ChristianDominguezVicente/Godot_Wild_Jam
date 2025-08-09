@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://do21nqo4k7sv4"
-path="res://.godot/imported/AnnieUseYourTelescope-Regular.ttf-d439104d030e0f45f8996e240f47da9c.fontdata"
+uid="uid://ced1dym32twdr"
+path="res://.godot/imported/JollyLodger-Regular.ttf-47dbb8d03defbcf246e1eb8051110bc3.fontdata"
 
 [deps]
 
-source_file="res://Fonts/AnnieUseYourTelescope-Regular.ttf"
-dest_files=["res://.godot/imported/AnnieUseYourTelescope-Regular.ttf-d439104d030e0f45f8996e240f47da9c.fontdata"]
+source_file="res://Assets/Fonts/JollyLodger-Regular.ttf"
+dest_files=["res://.godot/imported/JollyLodger-Regular.ttf-47dbb8d03defbcf246e1eb8051110bc3.fontdata"]
 
 [params]
 
