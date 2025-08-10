@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcljvjuwg634h"
-path="res://.godot/imported/babak-icon.png-ebad1ac2606a7ac9dbc78667e998c79a.ctex"
+uid="uid://ct83tngw3gg0v"
+path="res://.godot/imported/st-bg-1.jpg-96d8c351cc83b9476a6582bde348cdd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://babak-icon.png"
-dest_files=["res://.godot/imported/babak-icon.png-ebad1ac2606a7ac9dbc78667e998c79a.ctex"]
+source_file="res://Assets/Backgrounds/st-bg-1.jpg"
+dest_files=["res://.godot/imported/st-bg-1.jpg-96d8c351cc83b9476a6582bde348cdd8.ctex"]
 
 [params]
 

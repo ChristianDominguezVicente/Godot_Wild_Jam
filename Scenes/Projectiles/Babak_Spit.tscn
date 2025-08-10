@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://kxrlmc5mas6w"]
+
+[ext_resource type="Texture2D" uid="uid://c2mrvfl7d7o1c" path="res://Assets/Spritesheets/Spit-Sheet.png" id="1_b13e7"]
+[ext_resource type="Script" uid="uid://cwd6iwyrwhhu2" path="res://Scripts/Projectiles/babak_spit.gd" id="1_gkh63"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkh63"]
+atlas = ExtResource("1_b13e7")
+region = Rect2(0, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua85s"]
+atlas = ExtResource("1_b13e7")
+region = Rect2(16, 0, 16, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gotm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkh63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua85s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b13e7"]
+size = Vector2(18, 10)
+
+[node name="BabakSpit" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_gkh63")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_gotm5")
+frame_progress = 0.819166
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b13e7")

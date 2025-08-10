@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://df1jv7wxkbcl2"]
+
+[ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="1_jg6e1"]
+[ext_resource type="Script" uid="uid://2vcyjo4hfo8e" path="res://Scripts/HUDs/hud.gd" id="1_mdu8u"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_mdu8u")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_jg6e1")
+theme_override_font_sizes/font_size = 40
+text = "SCORE: "
+vertical_alignment = 1
+
+[node name="ReadyLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -11.5
+offset_right = 114.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_jg6e1")
+theme_override_font_sizes/font_size = 40
+text = "Left-Click when you are ready"
