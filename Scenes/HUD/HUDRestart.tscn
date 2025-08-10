@@ -1,13 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcsrf23rd6hep"]
+[gd_scene load_steps=12 format=3 uid="uid://bcsrf23rd6hep"]
 
 [ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="1_slwem"]
 [ext_resource type="Script" uid="uid://d4aoba4b84h4q" path="res://Scripts/HUDs/hud_restart.gd" id="1_tq6dx"]
 [ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_onlny"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onlny"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq6dx"]
-bg_color = Color(0.796078, 0.796078, 0.796078, 1)
+bg_color = Color(0.170347, 0.264899, 0.299892, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -17,7 +15,7 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s00uq"]
-bg_color = Color(0.592157, 0.592157, 0.592157, 1)
+bg_color = Color(0.170347, 0.264899, 0.299892, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -27,7 +25,57 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkq4j"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.14854, 0.234481, 0.266272, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dlkj"]
+bg_color = Color(0.2, 0.305882, 0.345098, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2a2b"]
+bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebo2o"]
+bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jiaa6"]
+bg_color = Color(0.14854, 0.234481, 0.266272, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf6v8"]
+bg_color = Color(0.2, 0.305882, 0.345098, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -40,57 +88,68 @@ shadow_offset = Vector2(0, 3.5)
 process_mode = 2
 script = ExtResource("1_tq6dx")
 
-[node name="MainButtons" type="VBoxContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainButtons" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -195.0
-offset_top = -61.0
-offset_right = 193.0
-offset_bottom = 183.0
+offset_left = -194.0
+offset_top = -122.0
+offset_right = 194.0
+offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MainButtons"]
+[node name="Label" type="Label" parent="Panel/MainButtons"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 7
 theme_override_fonts/font = ExtResource("1_slwem")
 theme_override_font_sizes/font_size = 60
 text = "You Lost!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Restart" type="Button" parent="MainButtons"]
+[node name="Restart" type="Button" parent="Panel/MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_onlny")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_onlny")
-theme_override_styles/hover = SubResource("StyleBoxFlat_tq6dx")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_s00uq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_gkq4j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tq6dx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s00uq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gkq4j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3dlkj")
 text = "Restart"
 
-[node name="Exit" type="Button" parent="MainButtons"]
+[node name="Exit" type="Button" parent="Panel/MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_onlny")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_onlny")
-theme_override_styles/hover = SubResource("StyleBoxFlat_tq6dx")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_s00uq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_gkq4j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_y2a2b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ebo2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jiaa6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lf6v8")
 text = "Exit"
 
-[connection signal="pressed" from="MainButtons/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="MainButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/MainButtons/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/MainButtons/Exit" to="." method="_on_exit_pressed"]

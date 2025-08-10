@@ -17,20 +17,21 @@ func _ready() -> void:
 	$HealthContainer.update_health(life)
 
 func _physics_process(delta: float) -> void:
-	velocity.y += GRAVITY * delta
+	if !get_tree().paused:
+		velocity.y += GRAVITY * delta
 
-	if is_on_floor():
-		if not get_parent().player_ready:
-			$AnimatedSprite2D.play("idle")
-		if Input.is_action_pressed("up"):
-			velocity.y = JUMP_SPEED
-		else:
-			$AnimatedSprite2D.play("walk")
-	
-	if Input.is_action_pressed("action"):
-		shoot()
+		if is_on_floor():
+			if not get_parent().player_ready:
+				$AnimatedSprite2D.play("idle")
+			if Input.is_action_pressed("up"):
+				velocity.y = JUMP_SPEED
+			else:
+				$AnimatedSprite2D.play("walk")
+		
+		if Input.is_action_pressed("action"):
+			shoot()
 
-	move_and_slide()
+		move_and_slide()
 
 func getting_hit(damage):
 	life -= damage

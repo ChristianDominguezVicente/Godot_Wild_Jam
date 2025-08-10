@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://cu0mpxcur7ieu"]
+[gd_scene load_steps=26 format=3 uid="uid://cu0mpxcur7ieu"]
 
 [ext_resource type="Script" uid="uid://df8bk3e8eqxm3" path="res://Scripts/Menu/Menu.gd" id="1_1kgdg"]
 [ext_resource type="Script" uid="uid://bs1mqdv6q5s5s" path="res://Scripts/Menu/AudioControl.gd" id="2_3kh17"]
 [ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_kulhe"]
 [ext_resource type="Script" uid="uid://bht0rgxfwih1u" path="res://Scripts/Menu/FullScreenControl.gd" id="3_kqkty"]
 [ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="3_l7xyq"]
-[ext_resource type="Texture2D" uid="uid://bcljvjuwg634h" path="res://babak-icon.png" id="6_l7xyq"]
+[ext_resource type="Script" uid="uid://gtunx1nv70ee" path="res://Scripts/Menu/AnimatedTextureRect.gd" id="6_h7084"]
+[ext_resource type="Texture2D" uid="uid://bk8o8psqd8f26" path="res://Assets/Spritesheets/Babak-Walk.png" id="7_uw0ty"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kulhe"]
 
@@ -62,6 +63,70 @@ thickness = 5
 color = Color(0.988235, 0.74902, 0.717647, 1)
 thickness = 5
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac4b6"]
+atlas = ExtResource("7_uw0ty")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2cqt"]
+atlas = ExtResource("7_uw0ty")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5buhm"]
+atlas = ExtResource("7_uw0ty")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et8ab"]
+atlas = ExtResource("7_uw0ty")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fq4t"]
+atlas = ExtResource("7_uw0ty")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c61og"]
+atlas = ExtResource("7_uw0ty")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqh14"]
+atlas = ExtResource("7_uw0ty")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooplh"]
+atlas = ExtResource("7_uw0ty")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i80xk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac4b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2cqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5buhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_et8ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fq4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c61og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqh14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooplh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -81,7 +146,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y5kka")
 
 [node name="MainButtons" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -290,6 +354,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
 text = "Back"
 
 [node name="Selector" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -354,8 +419,10 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="Selector/HBoxContainer/Babak/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("6_l7xyq")
+texture = SubResource("AtlasTexture_ac4b6")
 stretch_mode = 5
+script = ExtResource("6_h7084")
+sprites = SubResource("SpriteFrames_i80xk")
 
 [node name="Label" type="Label" parent="Selector/HBoxContainer/Babak/VBoxContainer"]
 layout_mode = 2
@@ -383,8 +450,10 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="Selector/HBoxContainer/Pukul/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("6_l7xyq")
+texture = SubResource("AtlasTexture_ac4b6")
 stretch_mode = 5
+script = ExtResource("6_h7084")
+sprites = SubResource("SpriteFrames_i80xk")
 
 [node name="Label" type="Label" parent="Selector/HBoxContainer/Pukul/VBoxContainer"]
 layout_mode = 2
@@ -412,8 +481,10 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="Selector/HBoxContainer/Gerakan/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("6_l7xyq")
+texture = SubResource("AtlasTexture_ac4b6")
 stretch_mode = 5
+script = ExtResource("6_h7084")
+sprites = SubResource("SpriteFrames_i80xk")
 
 [node name="Label" type="Label" parent="Selector/HBoxContainer/Gerakan/VBoxContainer"]
 layout_mode = 2
@@ -441,8 +512,10 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="Selector/HBoxContainer/Muntah/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("6_l7xyq")
+texture = SubResource("AtlasTexture_ac4b6")
 stretch_mode = 5
+script = ExtResource("6_h7084")
+sprites = SubResource("SpriteFrames_i80xk")
 
 [node name="Label" type="Label" parent="Selector/HBoxContainer/Muntah/VBoxContainer"]
 layout_mode = 2
@@ -470,8 +543,10 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="Selector/HBoxContainer/Kaki/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("6_l7xyq")
+texture = SubResource("AtlasTexture_ac4b6")
 stretch_mode = 5
+script = ExtResource("6_h7084")
+sprites = SubResource("SpriteFrames_i80xk")
 
 [node name="Label" type="Label" parent="Selector/HBoxContainer/Kaki/VBoxContainer"]
 layout_mode = 2
@@ -506,5 +581,25 @@ text = "Back"
 [connection signal="value_changed" from="Settings/SettingsContainer/SFX/AudioControl" to="Settings/SettingsContainer/SFX/AudioControl" method="_on_value_changed"]
 [connection signal="toggled" from="Settings/SettingsContainer/FullScreenControl" to="Settings/SettingsContainer/FullScreenControl" method="_on_toggled"]
 [connection signal="pressed" from="Settings/SettingsContainer/Back" to="." method="_on_back_settings_pressed"]
+[connection signal="focus_entered" from="Selector/HBoxContainer/Babak" to="Selector/HBoxContainer/Babak/VBoxContainer/TextureRect" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Selector/HBoxContainer/Babak" to="Selector/HBoxContainer/Babak/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Selector/HBoxContainer/Babak" to="Selector/HBoxContainer/Babak/VBoxContainer/TextureRect" method="_on_focus_entered"]
+[connection signal="mouse_exited" from="Selector/HBoxContainer/Babak" to="Selector/HBoxContainer/Babak/VBoxContainer/TextureRect" method="_on_focus_exited"]
 [connection signal="pressed" from="Selector/HBoxContainer/Babak" to="." method="_on_babak_pressed"]
+[connection signal="focus_entered" from="Selector/HBoxContainer/Pukul" to="Selector/HBoxContainer/Pukul/VBoxContainer/TextureRect" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Selector/HBoxContainer/Pukul" to="Selector/HBoxContainer/Pukul/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Selector/HBoxContainer/Pukul" to="Selector/HBoxContainer/Pukul/VBoxContainer/TextureRect" method="_on_focus_entered"]
+[connection signal="mouse_exited" from="Selector/HBoxContainer/Pukul" to="Selector/HBoxContainer/Pukul/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="focus_entered" from="Selector/HBoxContainer/Gerakan" to="Selector/HBoxContainer/Gerakan/VBoxContainer/TextureRect" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Selector/HBoxContainer/Gerakan" to="Selector/HBoxContainer/Gerakan/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Selector/HBoxContainer/Gerakan" to="Selector/HBoxContainer/Gerakan/VBoxContainer/TextureRect" method="_on_focus_entered"]
+[connection signal="mouse_exited" from="Selector/HBoxContainer/Gerakan" to="Selector/HBoxContainer/Gerakan/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="focus_entered" from="Selector/HBoxContainer/Muntah" to="Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Selector/HBoxContainer/Muntah" to="Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Selector/HBoxContainer/Muntah" to="Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect" method="_on_focus_entered"]
+[connection signal="mouse_exited" from="Selector/HBoxContainer/Muntah" to="Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="focus_entered" from="Selector/HBoxContainer/Kaki" to="Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Selector/HBoxContainer/Kaki" to="Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Selector/HBoxContainer/Kaki" to="Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect" method="_on_focus_entered"]
+[connection signal="mouse_exited" from="Selector/HBoxContainer/Kaki" to="Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect" method="_on_focus_exited"]
 [connection signal="pressed" from="Selector/Back" to="." method="_on_back_settings_pressed"]

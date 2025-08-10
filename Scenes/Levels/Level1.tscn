@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkggptrnicx"]
+[gd_scene load_steps=8 format=3 uid="uid://dkggptrnicx"]
 
 [ext_resource type="PackedScene" uid="uid://6rep0cac3re1" path="res://Scenes/Backgrounds/level_background_1.tscn" id="1_riv1q"]
 [ext_resource type="Script" uid="uid://dr6udo7txghur" path="res://Scripts/Levels/level_1.gd" id="1_xvio3"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://c7msp6isceecw" path="res://Scenes/Player/Babak.tscn" id="3_kri6y"]
 [ext_resource type="PackedScene" uid="uid://df1jv7wxkbcl2" path="res://Scenes/HUD/HUDStart.tscn" id="5_kri6y"]
 [ext_resource type="PackedScene" uid="uid://bcsrf23rd6hep" path="res://Scenes/HUD/HUDRestart.tscn" id="6_4d3fe"]
+[ext_resource type="PackedScene" uid="uid://bkscv41bijeth" path="res://Scenes/HUD/HUDPause.tscn" id="7_3ipdw"]
 
 [node name="Level1" type="Node"]
+process_mode = 3
 script = ExtResource("1_xvio3")
 
 [node name="LevelBackground1" parent="." instance=ExtResource("1_riv1q")]
@@ -24,4 +26,7 @@ position = Vector2(576, 324)
 [node name="HudStart" parent="." instance=ExtResource("5_kri6y")]
 
 [node name="HudRestart" parent="." instance=ExtResource("6_4d3fe")]
+visible = false
+
+[node name="HudPause" parent="." instance=ExtResource("7_3ipdw")]
 visible = false

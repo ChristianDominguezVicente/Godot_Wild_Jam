@@ -32,12 +32,16 @@ func _ready() -> void:
 	start_level()
 
 func _process(_delta: float) -> void:
-	if(player_ready):
-		main_level_logic()
-	else:
-		if Input.is_action_pressed("action"):
-			player_ready = true
-			$HudStart.hide_ready_msg()
+	if Input.is_action_just_pressed("pause") and !$HudRestart.visible and !$HudStart/ReadyLabel.visible:
+		pause()
+	
+	if !get_tree().paused:
+		if(player_ready):
+			main_level_logic()
+		else:
+			if Input.is_action_pressed("action"):
+				player_ready = true
+				$HudStart.hide_ready_msg()
 
 func main_level_logic():
 	speed = START_SPEED + score / ACCELERATION
@@ -119,4 +123,17 @@ func hit(body):
 func game_over():
 	get_tree().paused = true
 	player_ready = false
+	$HudRestart/Panel/MainButtons/Restart.grab_focus()
 	$HudRestart.show()
+	
+func pause():
+	if get_tree().paused:
+		if $HudPause/Panel/Settings.visible:
+			$HudPause._on_back_pressed()
+		else:
+			get_tree().paused = false
+			$HudPause.hide()
+	else:
+		get_tree().paused = true
+		$HudPause/Panel/MainButtons/Resume.grab_focus()
+		$HudPause.show()
