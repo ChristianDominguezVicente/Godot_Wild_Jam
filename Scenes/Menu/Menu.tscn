@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_kulhe"]
 [ext_resource type="Script" uid="uid://bht0rgxfwih1u" path="res://Scripts/Menu/FullScreenControl.gd" id="3_kqkty"]
 [ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="3_l7xyq"]
-[ext_resource type="Texture2D" uid="uid://bg5nd6208alh4" path="res://babak-icon.png" id="6_l7xyq"]
+[ext_resource type="Texture2D" uid="uid://bcljvjuwg634h" path="res://babak-icon.png" id="6_l7xyq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kulhe"]
 
@@ -81,7 +81,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y5kka")
 
 [node name="MainButtons" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -290,6 +289,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
 text = "Back"
 
 [node name="Selector" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
