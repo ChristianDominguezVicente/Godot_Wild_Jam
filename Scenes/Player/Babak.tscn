@@ -465,7 +465,7 @@ animation = &"walk"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_1y8qt"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_41rod"]
-graph_offset = Vector2(-1013, -64)
+graph_offset = Vector2(-628, -20)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_41rod")
 nodes/Animation/position = Vector2(-240, 140)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_1y8qt")
@@ -493,7 +493,6 @@ advance_mode = 2
 advance_condition = &"has_fell"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ymcik"]
-switch_mode = 2
 advance_mode = 2
 advance_condition = &"is_falling"
 
@@ -526,9 +525,9 @@ projectile = ExtResource("2_41rod")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
-animation = &"jump"
+animation = &"walk"
 autoplay = "idle"
-frame = 4
+frame = 6
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")

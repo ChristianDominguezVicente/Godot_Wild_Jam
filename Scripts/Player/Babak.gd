@@ -24,24 +24,26 @@ func _physics_process(delta: float) -> void:
 	velocity.y += GRAVITY * delta
 
 	if is_on_floor():
-
 		if not get_parent().player_ready:
-			$AnimatedSprite2D.play("idle")
+			anim_tree["parameters/conditions/is_stopped"] = true
+		else:
+			anim_tree["parameters/conditions/is_stopped"] = false
+
 		if Input.is_action_pressed("up"):
 			velocity.y = JUMP_SPEED
 			jumping = true
-			$AnimatedSprite2D.play("jump")
-
+			anim_tree["parameters/conditions/has_jumped"] = true
 		elif jumping:
-			$AnimatedSprite2D.play("fell")
- 
+			jumping = false
+			anim_tree["parameters/conditions/is_falling"] = false
+			anim_tree["parameters/conditions/has_fell"] = true
 		else:
-			$AnimatedSprite2D.play("walk")
-
-		jumping = false
+			anim_tree["parameters/conditions/has_fell"] = false
+			anim_tree["parameters/conditions/is_walking"] = true
 	else:
 		if velocity.y <= 200:
-			$AnimatedSprite2D.play("falling")
+			anim_tree["parameters/conditions/has_jumped"] = false
+			anim_tree["parameters/conditions/is_falling"] = true
 	
 	if Input.is_action_pressed("action"):
 		shoot()

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bvgpb7vq5y3wh" path="res://Assets/Obstacles/Waste.png" id="1_d1d4k"]
 
 [node name="Waste" type="Area2D"]
+collision_layer = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.32, 0.32)

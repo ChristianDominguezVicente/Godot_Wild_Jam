@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctd851mcxl6fy"]
+[gd_scene load_steps=4 format=3 uid="uid://ctd851mcxl6fy"]
 
+[ext_resource type="Script" uid="uid://mbmqita3ybnl" path="res://Scripts/Obstacles/wall.gd" id="1_jm72a"]
 [ext_resource type="Texture2D" uid="uid://blpc2r0oc7t2p" path="res://Assets/Obstacles/Wall.png" id="1_rahlu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rahlu"]
 size = Vector2(40, 648)
 
 [node name="Wall" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_jm72a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.300752, 0.835051)
@@ -15,3 +19,5 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, 324)
 shape = SubResource("RectangleShape2D_rahlu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
