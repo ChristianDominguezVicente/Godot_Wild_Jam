@@ -81,6 +81,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y5kka")
 
 [node name="MainButtons" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -289,7 +290,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
 text = "Back"
 
 [node name="Selector" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -506,4 +506,5 @@ text = "Back"
 [connection signal="value_changed" from="Settings/SettingsContainer/SFX/AudioControl" to="Settings/SettingsContainer/SFX/AudioControl" method="_on_value_changed"]
 [connection signal="toggled" from="Settings/SettingsContainer/FullScreenControl" to="Settings/SettingsContainer/FullScreenControl" method="_on_toggled"]
 [connection signal="pressed" from="Settings/SettingsContainer/Back" to="." method="_on_back_settings_pressed"]
+[connection signal="pressed" from="Selector/HBoxContainer/Babak" to="." method="_on_babak_pressed"]
 [connection signal="pressed" from="Selector/Back" to="." method="_on_back_settings_pressed"]

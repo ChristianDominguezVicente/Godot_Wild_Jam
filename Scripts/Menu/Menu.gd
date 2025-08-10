@@ -35,3 +35,8 @@ func _on_exit_pressed() -> void:
 
 func _on_back_settings_pressed() -> void:
 	_ready()
+
+
+func _on_babak_pressed() -> void:
+	Global.critter = "res://Scenes/Player/Babak.tscn"
+	get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
