@@ -21,6 +21,7 @@ signal player_dies
 func _ready() -> void:
 	life = MAX_HEALTH
 	$HealthContainer.update_health(life)
+	add_to_group("critter")
 	shoot_ready = true
 
 func _physics_process(delta: float) -> void:
@@ -54,6 +55,18 @@ func _physics_process(delta: float) -> void:
 
 		move_and_slide()
 
+func change_pos(pos : Vector2i):
+	self.position = pos
+
+func add_to_x_position(x_add):
+	self.position.x += x_add
+
+func change_vel(vel : Vector2i):
+	self.velocity = vel
+
+func set_speed(new_speed : int):
+	self.speed = new_speed
+
 func getting_hit(damage):
 	life -= damage
 
@@ -74,7 +87,6 @@ func shoot() -> void:
 		temp_projectile.set_speed(speed)
 		temp_projectile.position = $Mouth.global_position
 		temp_projectile.target_position = (get_global_mouse_position() - $Mouth.global_position).normalized()
-		temp_projectile.add_to_group("projectiles")
 
 		get_parent().add_child(temp_projectile)
 

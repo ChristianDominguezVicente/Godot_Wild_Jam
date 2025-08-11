@@ -1,10 +1,10 @@
-class_name Wall
+class_name Waste
 extends Area2D
 
-@export var life : int = 3
+@export var life : int = 1
 @export var damage : int = 1
 
-@onready var hitbox : CollisionShape2D = $Hitbox
+@onready var hitbox : CollisionPolygon2D = $Hitbox
 
 func receive_damage(enter_damage : int):
 	life -= enter_damage
