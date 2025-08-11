@@ -4,6 +4,8 @@ extends Area2D
 @export var life : int = 3
 @export var damage : int = 1
 
+@onready var hitbox : CollisionShape2D = $Hitbox
+
 func receive_damage(enter_damage : int):
 	life -= enter_damage
 	
@@ -11,10 +13,12 @@ func receive_damage(enter_damage : int):
 		destroy()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		body.getting_hit(damage)
-	elif body.name == "BabakSpit":
+	if body.is_in_group("projectiles"):
 		receive_damage(body.damage)
 
+	if body.name == "Player":
+		body.getting_hit(damage)
+
 func destroy():
+	hitbox.set_deferred("disabled", true)
 	self.hide()

@@ -6,6 +6,7 @@ const JUMP_SPEED : int = -1800
 const MAX_HEALTH : int = 3
 
 @onready var anim_tree : AnimationTree = $AnimationTree
+@onready var shoot_cooldown : Timer = $CooldownShootTimer
 
 @export_group("Character Stats")
 @export var life : int
@@ -13,12 +14,14 @@ const MAX_HEALTH : int = 3
 
 var speed : int
 var jumping : bool
+var shoot_ready : bool
 
 signal player_dies
 
 func _ready() -> void:
 	life = MAX_HEALTH
 	$HealthContainer.update_health(life)
+	shoot_ready = true
 
 func _physics_process(delta: float) -> void:
 	if !get_tree().paused:
@@ -64,10 +67,18 @@ func reset():
 	$HealthContainer.update_health(life)
 
 func shoot() -> void:
-	var temp_projectile = projectile.instantiate()
+	if shoot_ready:
+		shoot_ready = false
+		var temp_projectile = projectile.instantiate()
 
-	temp_projectile.set_speed(speed)
-	temp_projectile.position = $Mouth.global_position
-	temp_projectile.target_position = (get_global_mouse_position() - $Mouth.global_position).normalized()
+		temp_projectile.set_speed(speed)
+		temp_projectile.position = $Mouth.global_position
+		temp_projectile.target_position = (get_global_mouse_position() - $Mouth.global_position).normalized()
+		temp_projectile.add_to_group("projectiles")
 
-	get_parent().add_child(temp_projectile)
+		get_parent().add_child(temp_projectile)
+
+		shoot_cooldown.start()
+
+func _on_cooldown_shoot_timer_timeout() -> void:
+	shoot_ready = true

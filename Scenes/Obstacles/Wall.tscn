@@ -16,7 +16,7 @@ scale = Vector2(0.300752, 0.835051)
 texture = ExtResource("1_rahlu")
 centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(20, 324)
 shape = SubResource("RectangleShape2D_rahlu")
 
