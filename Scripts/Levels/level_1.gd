@@ -95,7 +95,6 @@ func generate_obstacle():
 
 func add_obstacle(obs, x, y):
 	obs.position = Vector2i(x, y)
-	obs.body_entered.connect(hit)
 	last_obstacle = obs
 	add_child(obs)
 	obstacles.append(obs)
@@ -115,10 +114,6 @@ func clear_all_obs():
 func remove_obs(obs):
 	obs.queue_free()
 	obstacles.erase(obs)
-	
-func hit(body):
-	if body.name == "Player":
-		$Player.getting_hit(1)
 
 func game_over():
 	get_tree().paused = true

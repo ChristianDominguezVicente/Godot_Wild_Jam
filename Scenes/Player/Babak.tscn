@@ -1,10 +1,51 @@
-[gd_scene load_steps=23 format=3 uid="uid://c7msp6isceecw"]
+[gd_scene load_steps=69 format=3 uid="uid://c7msp6isceecw"]
 
 [ext_resource type="Script" uid="uid://dx1xkhqnfoej0" path="res://Scripts/Player/Babak.gd" id="1_20xpu"]
 [ext_resource type="PackedScene" uid="uid://kxrlmc5mas6w" path="res://Scenes/Projectiles/Babak_Spit.tscn" id="2_41rod"]
 [ext_resource type="Texture2D" uid="uid://bpoihixtx6wsm" path="res://Assets/Spritesheets/Babak-Idle.png" id="2_go2b0"]
+[ext_resource type="Texture2D" uid="uid://du3p8snca4olr" path="res://Assets/Spritesheets/Babak-Jump.png" id="3_1y8qt"]
 [ext_resource type="Texture2D" uid="uid://dqe4fwidfsffc" path="res://Assets/Spritesheets/Babak_Walk.png" id="3_41rod"]
 [ext_resource type="Script" uid="uid://bwy3n7obj1i6g" path="res://Scripts/Player/health_container.gd" id="4_1y8qt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1rob"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn48q"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eecql"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoolx"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flaw1"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41rod"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y8qt"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wamud"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7dj3"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edfqb"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(128, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h54ih"]
 atlas = ExtResource("2_go2b0")
@@ -33,6 +74,26 @@ region = Rect2(160, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_825xp"]
 atlas = ExtResource("2_go2b0")
 region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymcik"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fyfk"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djl44"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka3q2"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mks33"]
+atlas = ExtResource("3_1y8qt")
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ji083"]
 atlas = ExtResource("3_41rod")
@@ -70,6 +131,46 @@ region = Rect2(224, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_u1rob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn48q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eecql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qoolx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flaw1")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41rod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y8qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wamud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7dj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edfqb")
+}],
+"loop": true,
+"name": &"fell",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_h54ih")
 }, {
 "duration": 1.0,
@@ -92,6 +193,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymcik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fyfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djl44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka3q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mks33")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 10.0
 }, {
 "frames": [{
@@ -127,6 +248,274 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0eop"]
 size = Vector2(18.6667, 24)
 
+[sub_resource type="Animation" id="Animation_pn48q"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_eecql"]
+resource_name = "falling"
+length = 0.15
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"falling"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_qoolx"]
+resource_name = "fell"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fell"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_41rod"]
+resource_name = "idle"
+length = 0.24
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_1y8qt"]
+resource_name = "jump"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_u1rob"]
+resource_name = "walk"
+length = 0.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pn48q"]
+_data = {
+&"RESET": SubResource("Animation_pn48q"),
+&"falling": SubResource("Animation_eecql"),
+&"fell": SubResource("Animation_qoolx"),
+&"idle": SubResource("Animation_41rod"),
+&"jump": SubResource("Animation_1y8qt"),
+&"walk": SubResource("Animation_u1rob")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u1rob"]
+animation = &"falling"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_pn48q"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_u1rob"]
+graph_offset = Vector2(-610, -1)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_u1rob")
+nodes/Animation/position = Vector2(-100, 160)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_pn48q")
+nodes/TimeScale/position = Vector2(100, 160)
+nodes/output/position = Vector2(300, 160)
+node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pn48q"]
+animation = &"fell"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_eecql"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_qoolx"]
+graph_offset = Vector2(-930, 15)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_pn48q")
+nodes/Animation/position = Vector2(-360, 120)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_eecql")
+nodes/TimeScale/position = Vector2(-80, 120)
+nodes/output/position = Vector2(200, 120)
+node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1y8qt"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_u1rob"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_pn48q"]
+graph_offset = Vector2(-432, 68)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_1y8qt")
+nodes/Animation/position = Vector2(-420, 120)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_u1rob")
+nodes/TimeScale/position = Vector2(-60, 120)
+node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_flaw1"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_ymcik"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1y8qt"]
+graph_offset = Vector2(-736, 9)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_flaw1")
+nodes/Animation/position = Vector2(-140, 120)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ymcik")
+nodes/TimeScale/position = Vector2(60, 120)
+nodes/output/position = Vector2(260, 120)
+node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_41rod"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_1y8qt"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_41rod"]
+graph_offset = Vector2(-628, -20)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_41rod")
+nodes/Animation/position = Vector2(-240, 140)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_1y8qt")
+nodes/TimeScale/position = Vector2(40, 140)
+nodes/output/position = Vector2(300, 140)
+node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eecql"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1y8qt"]
+advance_mode = 2
+advance_condition = &"is_walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u1rob"]
+advance_mode = 2
+advance_condition = &"has_jumped"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qoolx"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_flaw1"]
+advance_mode = 2
+advance_condition = &"has_fell"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ymcik"]
+advance_mode = 2
+advance_condition = &"is_falling"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_41rod"]
+advance_mode = 2
+advance_condition = &"is_stopped"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qoolx"]
+states/End/position = Vector2(1029, 113)
+states/Start/position = Vector2(214, 89)
+states/falling/node = SubResource("AnimationNodeBlendTree_u1rob")
+states/falling/position = Vector2(732, 89)
+states/fell/node = SubResource("AnimationNodeBlendTree_qoolx")
+states/fell/position = Vector2(585, 195)
+states/idle/node = SubResource("AnimationNodeBlendTree_pn48q")
+states/idle/position = Vector2(334, 89)
+states/jump/node = SubResource("AnimationNodeBlendTree_1y8qt")
+states/jump/position = Vector2(585, 89)
+states/walk/node = SubResource("AnimationNodeBlendTree_41rod")
+states/walk/position = Vector2(450, 89)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_eecql"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_1y8qt"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_u1rob"), "fell", "walk", SubResource("AnimationNodeStateMachineTransition_qoolx"), "falling", "fell", SubResource("AnimationNodeStateMachineTransition_flaw1"), "jump", "falling", SubResource("AnimationNodeStateMachineTransition_ymcik"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_41rod")]
+graph_offset = Vector2(65, -65)
+
 [node name="Babak" type="CharacterBody2D"]
 z_index = 1
 scale = Vector2(1.5, 1.5)
@@ -138,7 +527,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.494161
+frame = 6
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")
@@ -174,3 +563,22 @@ layout_mode = 2
 
 [node name="5" type="TextureRect" parent="HealthContainer"]
 layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pn48q")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_qoolx")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/has_fell = false
+parameters/conditions/has_jumped = false
+parameters/conditions/is_falling = false
+parameters/conditions/is_stopped = false
+parameters/conditions/is_walking = false
+parameters/falling/TimeScale/scale = 0.4
+parameters/fell/TimeScale/scale = 0.5
+parameters/idle/TimeScale/scale = 0.5
+parameters/jump/TimeScale/scale = 0.5
+parameters/walk/TimeScale/scale = 0.5
