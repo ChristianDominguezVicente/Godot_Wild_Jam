@@ -29,18 +29,18 @@ func _physics_process(delta: float) -> void:
 				anim_tree["parameters/conditions/is_stopped"] = true
 			else:
 				anim_tree["parameters/conditions/is_stopped"] = false
-
-			if Input.is_action_pressed("up"):
-				velocity.y = JUMP_SPEED
-				jumping = true
-				anim_tree["parameters/conditions/has_jumped"] = true
-			elif jumping:
-				jumping = false
-				anim_tree["parameters/conditions/is_falling"] = false
-				anim_tree["parameters/conditions/has_fell"] = true
-			else:
-				anim_tree["parameters/conditions/has_fell"] = false
-				anim_tree["parameters/conditions/is_walking"] = true
+				
+				if Input.is_action_pressed("up"):
+					velocity.y = JUMP_SPEED
+					jumping = true
+					anim_tree["parameters/conditions/has_jumped"] = true
+				elif jumping:
+					jumping = false
+					anim_tree["parameters/conditions/is_falling"] = false
+					anim_tree["parameters/conditions/has_fell"] = true
+				else:
+					anim_tree["parameters/conditions/has_fell"] = false
+					anim_tree["parameters/conditions/is_walking"] = true
 		else:
 			if velocity.y <= 200:
 				anim_tree["parameters/conditions/has_jumped"] = false
