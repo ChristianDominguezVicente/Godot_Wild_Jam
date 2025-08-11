@@ -8,7 +8,7 @@ extends Area2D
 
 func receive_damage(enter_damage : int):
 	life -= enter_damage
-	
+
 	if life <= 0:
 		destroy()
 
