@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdn4mtgik6on3"]
+
+[ext_resource type="Texture2D" uid="uid://dqi7p8qywjgvp" path="res://Assets/QTE/ArrowLeft.png" id="1_gpysp"]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer"]
+size_flags_horizontal = 3
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_gpysp")

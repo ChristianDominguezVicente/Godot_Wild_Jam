@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh0pdw1mo5s3m"]
+
+[ext_resource type="Texture2D" uid="uid://xsjkajqi5x7a" path="res://Assets/QTE/ArrowRight.png" id="1_6s61y"]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer"]
+size_flags_horizontal = 3
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6s61y")

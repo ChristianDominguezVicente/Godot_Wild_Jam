@@ -30,6 +30,9 @@ func _on_settings_pressed() -> void:
 	settings.visible = true
 	$Settings/SettingsContainer/Music/AudioControl.grab_focus()
 
+func _on_credits_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Credits/Credits.tscn")
+
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 

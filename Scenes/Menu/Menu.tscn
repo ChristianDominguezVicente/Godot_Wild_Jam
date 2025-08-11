@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bcljvjuwg634h" path="res://babak-icon.png" id="6_uw0ty"]
 [ext_resource type="Texture2D" uid="uid://dqe4fwidfsffc" path="res://Assets/Spritesheets/Babak_Walk.png" id="8_ac4b6"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_kulhe"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_uw0ty"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5kka"]
-texture = SubResource("CanvasTexture_kulhe")
+texture = SubResource("CanvasTexture_uw0ty")
 modulate_color = Color(0.419608, 0.427451, 0.462745, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kgdg"]
@@ -154,9 +154,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -195.0
-offset_top = -61.0
+offset_top = -70.0
 offset_right = 193.0
-offset_bottom = 183.0
+offset_bottom = 213.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -190,6 +190,22 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
 theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
 text = "Settings
+"
+
+[node name="Credits" type="Button" parent="MainButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_1kgdg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
+text = "Credits
 "
 
 [node name="Exit" type="Button" parent="MainButtons"]
@@ -577,6 +593,7 @@ text = "Back"
 
 [connection signal="pressed" from="MainButtons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MainButtons/Exit" to="." method="_on_exit_pressed"]
 [connection signal="value_changed" from="Settings/SettingsContainer/Music/AudioControl" to="Settings/SettingsContainer/Music/AudioControl" method="_on_value_changed"]
 [connection signal="value_changed" from="Settings/SettingsContainer/SFX/AudioControl" to="Settings/SettingsContainer/SFX/AudioControl" method="_on_value_changed"]
