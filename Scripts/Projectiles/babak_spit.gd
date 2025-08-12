@@ -14,7 +14,7 @@ func _ready() -> void:
 	despawn()
 
 func _physics_process(delta: float) -> void:
-	velocity = target_position * speed
+	velocity = target_position * (constant_speed + speed)
 	move_and_slide()
 
 func set_speed(initial_speed : int):
