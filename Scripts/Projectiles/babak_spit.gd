@@ -10,6 +10,7 @@ var despawn_time : int = 2
 
 func _ready() -> void:
 	speed = constant_speed
+	add_to_group("projectiles")
 	despawn()
 
 func _physics_process(delta: float) -> void:

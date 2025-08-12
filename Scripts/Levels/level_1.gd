@@ -21,13 +21,16 @@ var ground_height : int
 var score : int
 
 var player_ready : bool
+var player
 
 var last_obstacle
 
 func _ready() -> void:
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
-	$Player.player_dies.connect(game_over)
+	player = load(Global.critter).instantiate()
+	player.player_dies.connect(game_over)
+	add_child(player)
 	$HudRestart.restart_pressed.connect(start_level)
 	start_level()
 
@@ -50,8 +53,8 @@ func main_level_logic():
 
 	generate_obstacle()
 
-	$Player.position.x += speed
-	$Player.speed = speed
+	player.add_to_x_position(speed)
+	player.set_speed(speed)
 	$Camera2D.position.x += speed
 
 	if $Camera2D.position.x - $Ground.position.x> screen_size.x * 1.5:
@@ -69,9 +72,9 @@ func start_level():
 	
 	get_tree().paused = false
 
-	$Player.position = PLAYER_START_LOCATION
-	$Player.velocity = Vector2i(0, 0)
-	$Player.reset()
+	player.change_pos(PLAYER_START_LOCATION)
+	player.change_vel(Vector2i(0, 0))
+	player.reset()
 	
 	$Camera2D.position = CAM_START_LOCATION
 	$Ground.position = Vector2i(0, 10)

@@ -527,7 +527,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
 animation = &"idle"
 autoplay = "idle"
-frame = 4
+frame = 5
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")
@@ -582,3 +582,8 @@ parameters/fell/TimeScale/scale = 0.5
 parameters/idle/TimeScale/scale = 0.5
 parameters/jump/TimeScale/scale = 0.5
 parameters/walk/TimeScale/scale = 0.5
+
+[node name="CooldownShootTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="CooldownShootTimer" to="." method="_on_cooldown_shoot_timer_timeout"]
