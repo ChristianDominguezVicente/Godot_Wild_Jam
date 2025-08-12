@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd0pfd20psk78"]
+[gd_scene load_steps=4 format=3 uid="uid://bd0pfd20psk78"]
 
 [ext_resource type="Script" uid="uid://b3uq1ir64ie3t" path="res://Scripts/HUDs/hud_qte.gd" id="1_st7yy"]
 [ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="2_dhsqs"]
+[ext_resource type="AudioStream" uid="uid://um67o8a22hcg" path="res://Assets/QTE/key-press.mp3" id="3_lkgnh"]
 
 [node name="HudQTE" type="CanvasLayer"]
 process_mode = 3
@@ -47,3 +48,7 @@ theme_override_fonts/font = ExtResource("2_dhsqs")
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KeyPress" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lkgnh")
+volume_db = 2.0

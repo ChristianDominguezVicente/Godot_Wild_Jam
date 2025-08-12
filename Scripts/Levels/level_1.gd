@@ -4,6 +4,11 @@ extends Node
 var wall_scene = preload("res://Scenes/Obstacles/Wall.tscn")
 var waste_scene = preload("res://Scenes/Obstacles/Waste.tscn")
 
+###########################################
+## BORRAR HACER CON UN OBJETO CON HITBOX ##
+###########################################
+var qte_scene = preload("res://Scenes/HUD/HUDQTE.tscn")
+
 var obstacles_scenes := [wall_scene, waste_scene]
 var obstacles : Array
 
@@ -24,6 +29,7 @@ var player_ready : bool
 var player
 
 var last_obstacle
+var qte_instance
 
 func _ready() -> void:
 	screen_size = get_window().size
@@ -62,6 +68,9 @@ func main_level_logic():
 
 	score += speed         
 	$HudStart.update_score(score / SCORE_INCREASE_SPEED)
+	
+	if score > 5000 and score < 5020:
+		start_qte()
  
 	clear_passed_obs()
 
@@ -128,10 +137,32 @@ func pause():
 	if get_tree().paused:
 		if $HudPause/Panel/Settings.visible:
 			$HudPause._on_back_pressed()
-		else:
+		else:              
 			get_tree().paused = false
 			$HudPause.hide()
 	else:
 		get_tree().paused = true
 		$HudPause/Panel/MainButtons/Resume.grab_focus()
 		$HudPause.show()
+
+###########################################
+## BORRAR HACER CON UN OBJETO CON HITBOX ##
+###########################################
+func start_qte():
+	get_tree().paused = true
+	qte_instance = qte_scene.instantiate()
+	add_child(qte_instance)
+	qte_instance.connect("qte_finished", _on_qte_finished)
+
+func _on_qte_finished(success : bool):
+	if success:
+		player.recover_health(1)
+	else:
+		player.getting_hit(1)
+
+	if qte_instance:
+		qte_instance.queue_free()
+		qte_instance = null
+	
+	get_tree().paused = false
+   

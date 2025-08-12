@@ -4,6 +4,8 @@ extends CanvasLayer
 @onready var timer = $Panel/Timer
 @onready var time_label = $Panel/TimeLabel
 
+signal qte_finished(success)
+
 var sequence: Array[String] = []
 var current_index: int = 0
 
@@ -23,6 +25,7 @@ func start_qte(num: int, time: float) -> void:
 		child.queue_free()
 
 	sequence.clear()
+
 	for i in range(num):
 		var dir = ["up", "down", "left", "right"].pick_random()
 		sequence.append(dir)
@@ -43,8 +46,11 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed(sequence[current_index]):
 		_set_arrow_color(current_index, Color(0, 1, 0))
 		current_index += 1
+
 		if current_index >= sequence.size():
-			get_tree().quit()
+			end_qte(true)
+		
+		$KeyPress.play()
 
 	elif Input.is_action_just_pressed("up") \
 		or Input.is_action_just_pressed("down") \
@@ -53,7 +59,7 @@ func _process(delta: float) -> void:
 
 		if not Input.is_action_just_pressed(sequence[current_index]):
 			_set_arrow_color(current_index, Color(1, 0, 0))
-			get_tree().quit()
+			end_qte(false)
 
 func _set_arrow_color(index: int, color: Color) -> void:
 	if index < 0 or index >= hbox.get_child_count():
@@ -65,4 +71,7 @@ func _set_arrow_color(index: int, color: Color) -> void:
 		arrow_scene.get_node("TextureRect").modulate = color
 
 func _on_time_up() -> void:
-	get_tree().quit()
+	end_qte(false)
+
+func end_qte(result : bool):
+	qte_finished.emit(result)
