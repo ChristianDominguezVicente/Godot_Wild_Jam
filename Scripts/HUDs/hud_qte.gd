@@ -37,7 +37,7 @@ func start_qte(num: int, time: float) -> void:
 	timer.start(time)
 	time_label.text = str(time)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	time_label.text = str(round(timer.time_left * 10) / 10.0)
 
 	if sequence.is_empty():

@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func set_speed(initial_speed : int):
-	self.speed += initial_speed
+	self.speed = constant_speed + initial_speed
 
 func despawn():
 	await get_tree().create_timer(despawn_time).timeout
