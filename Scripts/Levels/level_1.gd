@@ -69,7 +69,7 @@ func main_level_logic():
 	score += speed         
 	$HudStart.update_score(score / SCORE_INCREASE_SPEED)
 	
-	if score > 5000 and score < 5020:
+	if (score % 10000) == 0:
 		start_qte()
  
 	clear_passed_obs()
