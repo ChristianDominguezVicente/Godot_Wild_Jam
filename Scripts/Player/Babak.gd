@@ -76,7 +76,20 @@ func getting_hit(damage):
 	if(life <= 0):
 		emit_signal("player_dies")
 
+func recover_health(health : int):
+	if (life + health) > MAX_HEALTH:
+		life = MAX_HEALTH
+	else:
+		life += health
+
+	$HealthContainer.update_health(life)
+
 func reset():
+	anim_tree["parameters/conditions/has_jumped"] = false
+	anim_tree["parameters/conditions/has_fell"] = false
+	anim_tree["parameters/conditions/is_falling"] = false
+
+	anim_tree["parameters/conditions/is_stopped"] = true
 	life = MAX_HEALTH
 	$HealthContainer.update_health(life)
 
