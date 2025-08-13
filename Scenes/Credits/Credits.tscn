@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqd7112x5one2"]
+[gd_scene load_steps=12 format=3 uid="uid://dqd7112x5one2"]
 
 [ext_resource type="Script" uid="uid://bjdag0oh4b0x2" path="res://Scripts/Credits/Credits.gd" id="1_jq1kv"]
-[ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="1_mdxjw"]
+[ext_resource type="Texture2D" uid="uid://c1aas0436cb70" path="res://Assets/UI/Credits.png" id="2_l755l"]
 [ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_mrcp2"]
 [ext_resource type="AudioStream" uid="uid://bjnmtwnsctp0p" path="res://Audio/BabakMenu.wav" id="4_qqh6l"]
+[ext_resource type="Texture2D" uid="uid://ya2kxkvoefyx" path="res://Assets/UI/CreditsBack.png" id="4_thk3a"]
 [ext_resource type="AudioStream" uid="uid://befi63b07rxld" path="res://Audio/UIBackBabakBack.wav" id="5_jdyel"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kulhe"]
@@ -13,32 +14,32 @@ texture = SubResource("CanvasTexture_kulhe")
 modulate_color = Color(0.419608, 0.427451, 0.462745, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq1kv"]
-bg_color = Color(0.14854, 0.234481, 0.266272, 1)
+bg_color = Color(0.14902, 0.235294, 0.266667, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqh6l"]
-bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdyel"]
-bg_color = Color(0.2, 0.305882, 0.345098, 1)
+bg_color = Color(0.2, 0.305882, 0.345098, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
@@ -60,190 +61,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_uciwv")
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -364.0
-offset_top = -311.0
-offset_right = 365.0
-offset_bottom = -110.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 7
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 70
-text = "Thanks for playing!
-A Game for Godot Wild Jam #84"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -471.5
-offset_top = -105.0
-offset_right = 471.5
-offset_bottom = 281.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 200
-alignment = 1
-
-[node name="Role" type="Label" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 65
-text = "Role                                      "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Dev" type="Label" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 65
-text = "Dev"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 200
-alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 45
-text = "Music & Sound:             "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer5"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 45
-text = "Alba Conde (MiyaMuya)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 200
-alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 45
-text = "2D Art:                   "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 45
-text = "Azazel Fernández (szephyr)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 200
-alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 45
-text = "Programmer:              "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 45
-text = "Víctor Funcia (victorfori)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 200
-alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 45
-text = "Programmer:   "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("1_mdxjw")
-theme_override_font_sizes/font_size = 45
-text = "Christian Domínguez (Vaskymon)"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Credits" type="Sprite2D" parent="Background"]
+position = Vector2(575, 326)
+texture = ExtResource("2_l755l")
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -194.0
-offset_top = -75.0
-offset_right = 194.0
-offset_bottom = -11.0
-grow_horizontal = 2
+offset_left = -109.0
+offset_top = -103.0
+grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -256,7 +87,8 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_jq1kv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qqh6l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jq1kv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jdyel")
-text = "Back"
+icon = ExtResource("4_thk3a")
+icon_alignment = 1
 
 [node name="Music_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_qqh6l")

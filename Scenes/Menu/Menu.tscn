@@ -18,17 +18,17 @@
 [ext_resource type="AudioStream" uid="uid://sj5yqeyajwhj" path="res://Audio/UISelect.wav" id="9_kqh14"]
 [ext_resource type="Texture2D" uid="uid://clox0knpr0k0d" path="res://Assets/UI/ExitButton.png" id="9_ofv6h"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1upnj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofv6h"]
 atlas = ExtResource("3_ac4b6")
-region = Rect2(1152, 0, 1152, 648)
+region = Rect2(0, 648, 1152, 648)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0fcc"]
 atlas = ExtResource("3_ac4b6")
 region = Rect2(0, 0, 1152, 648)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ofv6h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1upnj"]
 atlas = ExtResource("3_ac4b6")
-region = Rect2(0, 648, 1152, 648)
+region = Rect2(1152, 0, 1152, 648)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g5cqd"]
 atlas = ExtResource("3_ac4b6")
@@ -352,10 +352,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_1upnj")
+texture = SubResource("AtlasTexture_ofv6h")
 script = ExtResource("6_h7084")
 sprites = SubResource("SpriteFrames_q10mx")
-frame_index = 1
+frame_index = 2
 auto_play = true
 playing = true
 
