@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://6rep0cac3re1"]
 
-[ext_resource type="Texture2D" uid="uid://dwi4642dr5nof" path="res://Assets/Backgrounds/Lvl1BGparallaxBack2.png" id="1_oakmb"]
-[ext_resource type="Texture2D" uid="uid://8c0eyhe3j4mn" path="res://Assets/Backgrounds/Lvl1BGparallaxFront.png" id="2_n5iiw"]
+[ext_resource type="Texture2D" uid="uid://b2bv0jls81ntn" path="res://Assets/Backgrounds/Lvl1BGparallaxBackFix.png" id="1_oakmb"]
+[ext_resource type="Texture2D" uid="uid://kdobedsncvyq" path="res://Assets/Backgrounds/Lvl1BGparallaxFrontFix.png" id="2_n5iiw"]
 
 [node name="LevelBackground1" type="ParallaxBackground"]
 

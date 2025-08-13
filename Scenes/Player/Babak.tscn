@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://c7msp6isceecw"]
+[gd_scene load_steps=71 format=3 uid="uid://c7msp6isceecw"]
 
 [ext_resource type="Script" uid="uid://dx1xkhqnfoej0" path="res://Scripts/Player/Babak.gd" id="1_20xpu"]
 [ext_resource type="PackedScene" uid="uid://kxrlmc5mas6w" path="res://Scenes/Projectiles/Babak_Spit.tscn" id="2_41rod"]
@@ -516,6 +516,14 @@ states/walk/position = Vector2(450, 89)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_eecql"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_1y8qt"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_u1rob"), "fell", "walk", SubResource("AnimationNodeStateMachineTransition_qoolx"), "falling", "fell", SubResource("AnimationNodeStateMachineTransition_flaw1"), "jump", "falling", SubResource("AnimationNodeStateMachineTransition_ymcik"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_41rod")]
 graph_offset = Vector2(65, -65)
 
+[sub_resource type="Curve" id="Curve_41rod"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_1y8qt"]
+offsets = PackedFloat32Array(0.00296736, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Babak" type="CharacterBody2D"]
 z_index = 1
 scale = Vector2(1.5, 1.5)
@@ -527,7 +535,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
 animation = &"idle"
 autoplay = "idle"
-frame = 5
+frame = 3
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")
@@ -585,5 +593,20 @@ parameters/walk/TimeScale/scale = 0.5
 
 [node name="CooldownShootTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="LandedParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 15.3333)
+emitting = false
+amount = 10
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(20, 1)
+scale_amount_min = 10.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_41rod")
+color = Color(0.788235, 0.52549, 0.52549, 1)
+color_ramp = SubResource("Gradient_1y8qt")
 
 [connection signal="timeout" from="CooldownShootTimer" to="." method="_on_cooldown_shoot_timer_timeout"]

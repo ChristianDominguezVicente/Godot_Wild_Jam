@@ -43,6 +43,7 @@ func _physics_process(delta: float) -> void:
 					anim_tree["parameters/conditions/is_falling"] = false
 					anim_tree["parameters/conditions/has_fell"] = true
 				else:
+					$LandedParticles.emitting = true
 					anim_tree["parameters/conditions/has_fell"] = false
 					anim_tree["parameters/conditions/is_walking"] = true
 		else:

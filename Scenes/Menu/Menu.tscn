@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cu0mpxcur7ieu"]
+[gd_scene load_steps=34 format=3 uid="uid://cu0mpxcur7ieu"]
 
 [ext_resource type="Script" uid="uid://df8bk3e8eqxm3" path="res://Scripts/Menu/Menu.gd" id="1_1kgdg"]
 [ext_resource type="Script" uid="uid://bs1mqdv6q5s5s" path="res://Scripts/Menu/AudioControl.gd" id="2_3kh17"]
@@ -8,15 +8,16 @@
 [ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="3_l7xyq"]
 [ext_resource type="Script" uid="uid://gtunx1nv70ee" path="res://Scripts/Menu/AnimatedTextureRect.gd" id="6_h7084"]
 [ext_resource type="Texture2D" uid="uid://bcljvjuwg634h" path="res://babak-icon.png" id="6_uw0ty"]
+[ext_resource type="AudioStream" uid="uid://bjnmtwnsctp0p" path="res://Audio/BabakMenu.wav" id="6_x2cqt"]
 [ext_resource type="Texture2D" uid="uid://dqe4fwidfsffc" path="res://Assets/Spritesheets/Babak_Walk.png" id="8_ac4b6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1upnj"]
-atlas = ExtResource("3_ac4b6")
-region = Rect2(1152, 0, 1152, 648)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0fcc"]
 atlas = ExtResource("3_ac4b6")
 region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1upnj"]
+atlas = ExtResource("3_ac4b6")
+region = Rect2(1152, 0, 1152, 648)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofv6h"]
 atlas = ExtResource("3_ac4b6")
@@ -181,10 +182,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_1upnj")
+texture = SubResource("AtlasTexture_o0fcc")
 script = ExtResource("6_h7084")
 sprites = SubResource("SpriteFrames_q10mx")
-frame_index = 1
 auto_play = true
 playing = true
 
@@ -298,6 +298,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
 text = "Exit"
 
 [node name="Music_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_x2cqt")
 autoplay = true
 bus = &"Music"
 
