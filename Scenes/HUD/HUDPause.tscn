@@ -1,10 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://bkscv41bijeth"]
+[gd_scene load_steps=24 format=3 uid="uid://bkscv41bijeth"]
 
 [ext_resource type="Script" uid="uid://bm0jx2vrjul1b" path="res://Scripts/HUDs/hud_pause.gd" id="1_gvpy6"]
 [ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="2_l73jb"]
 [ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="3_ujhjy"]
 [ext_resource type="Script" uid="uid://bs1mqdv6q5s5s" path="res://Scripts/Menu/AudioControl.gd" id="4_ujhjy"]
 [ext_resource type="Script" uid="uid://bht0rgxfwih1u" path="res://Scripts/Menu/FullScreenControl.gd" id="5_hr3g3"]
+[ext_resource type="AudioStream" uid="uid://befi63b07rxld" path="res://Audio/UIBackBabakBack.wav" id="6_dl88k"]
+[ext_resource type="AudioStream" uid="uid://dcb0hjlcluop" path="res://Audio/UIchangeSelection.wav" id="7_ah1od"]
+[ext_resource type="AudioStream" uid="uid://sj5yqeyajwhj" path="res://Audio/UISelect.wav" id="8_lh5a6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq6dx"]
 bg_color = Color(0.170347, 0.264899, 0.299892, 1)
@@ -348,6 +351,21 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_cv8ao")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fatfd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s10ir")
 text = "Back"
+
+[node name="Back_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dl88k")
+autoplay = true
+bus = &"SFX"
+
+[node name="ChangeSelection_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ah1od")
+autoplay = true
+bus = &"SFX"
+
+[node name="Select_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_lh5a6")
+autoplay = true
+bus = &"SFX"
 
 [connection signal="pressed" from="Panel/MainButtons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/MainButtons/Restart" to="." method="_on_restart_pressed"]

@@ -32,7 +32,3 @@ visible = false
 stream = ExtResource("7_8h4de")
 autoplay = true
 bus = &"Music"
-
-[node name="SFX_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-autoplay = true
-bus = &"SFX"

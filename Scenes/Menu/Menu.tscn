@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cu0mpxcur7ieu"]
+[gd_scene load_steps=37 format=3 uid="uid://cu0mpxcur7ieu"]
 
 [ext_resource type="Script" uid="uid://df8bk3e8eqxm3" path="res://Scripts/Menu/Menu.gd" id="1_1kgdg"]
 [ext_resource type="Script" uid="uid://bs1mqdv6q5s5s" path="res://Scripts/Menu/AudioControl.gd" id="2_3kh17"]
@@ -9,7 +9,10 @@
 [ext_resource type="Script" uid="uid://gtunx1nv70ee" path="res://Scripts/Menu/AnimatedTextureRect.gd" id="6_h7084"]
 [ext_resource type="Texture2D" uid="uid://bcljvjuwg634h" path="res://babak-icon.png" id="6_uw0ty"]
 [ext_resource type="AudioStream" uid="uid://bjnmtwnsctp0p" path="res://Audio/BabakMenu.wav" id="6_x2cqt"]
+[ext_resource type="AudioStream" uid="uid://befi63b07rxld" path="res://Audio/UIBackBabakBack.wav" id="7_7fq4t"]
 [ext_resource type="Texture2D" uid="uid://dqe4fwidfsffc" path="res://Assets/Spritesheets/Babak_Walk.png" id="8_ac4b6"]
+[ext_resource type="AudioStream" uid="uid://dcb0hjlcluop" path="res://Audio/UIchangeSelection.wav" id="8_c61og"]
+[ext_resource type="AudioStream" uid="uid://sj5yqeyajwhj" path="res://Audio/UISelect.wav" id="9_kqh14"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofv6h"]
 atlas = ExtResource("3_ac4b6")
@@ -303,7 +306,18 @@ stream = ExtResource("6_x2cqt")
 autoplay = true
 bus = &"Music"
 
-[node name="SFX_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Back_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7fq4t")
+autoplay = true
+bus = &"SFX"
+
+[node name="ChangeSelection_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_c61og")
+autoplay = true
+bus = &"SFX"
+
+[node name="Select_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_kqh14")
 autoplay = true
 bus = &"SFX"
 

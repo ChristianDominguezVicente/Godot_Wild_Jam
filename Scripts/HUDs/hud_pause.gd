@@ -4,6 +4,26 @@ extends CanvasLayer
 @onready var main_buttons: VBoxContainer = $Panel/MainButtons
 @onready var settings: Panel = $Panel/Settings
 
+func _input(event) -> void:
+	if event.is_action_released("ui_cancel"):
+		if settings.visible:
+			main_buttons.visible = true
+			settings.visible = false
+			$Panel/MainButtons/Resume.grab_focus()
+			$Back_AudioStreamPlayer.play()
+
+	if event.is_action_pressed("ui_accept"):
+		$Select_AudioStreamPlayer.play()
+	
+	if main_buttons.visible and \
+	(event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down")):
+		$ChangeSelection_AudioStreamPlayer.play()
+		
+	if settings.visible and \
+	(event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down") \
+	or event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right")):
+		$ChangeSelection_AudioStreamPlayer.play()
+
 func _on_resume_pressed() -> void:
 	$".".hide()
 	get_tree().paused = false

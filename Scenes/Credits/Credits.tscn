@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqd7112x5one2"]
+[gd_scene load_steps=11 format=3 uid="uid://dqd7112x5one2"]
 
 [ext_resource type="Script" uid="uid://bjdag0oh4b0x2" path="res://Scripts/Credits/Credits.gd" id="1_jq1kv"]
 [ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="1_mdxjw"]
 [ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_mrcp2"]
 [ext_resource type="AudioStream" uid="uid://bjnmtwnsctp0p" path="res://Audio/BabakMenu.wav" id="4_qqh6l"]
+[ext_resource type="AudioStream" uid="uid://befi63b07rxld" path="res://Audio/UIBackBabakBack.wav" id="5_jdyel"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kulhe"]
 
@@ -262,7 +263,8 @@ stream = ExtResource("4_qqh6l")
 autoplay = true
 bus = &"Music"
 
-[node name="SFX_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Back_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jdyel")
 autoplay = true
 bus = &"SFX"
 
