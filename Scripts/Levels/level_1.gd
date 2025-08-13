@@ -32,7 +32,7 @@ var last_obstacle
 var qte_instance
 
 func _ready() -> void:
-	screen_size = get_window().size
+	screen_size = Vector2i(1152, 648)
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	player = load(Global.critter).instantiate()
 	player.player_dies.connect(game_over)
@@ -63,7 +63,7 @@ func main_level_logic():
 	player.set_speed(speed)
 	$Camera2D.position.x += speed
 
-	if $Camera2D.position.x - $Ground.position.x> screen_size.x * 1.5:
+	if ($Camera2D.position.x - $Ground.position.x) > (screen_size.x * 1.5):     
 		$Ground.position.x += screen_size.x
 
 	score += speed         
@@ -101,7 +101,7 @@ func generate_obstacle():
 		var obs_height = obs.get_node("Sprite2D").texture.get_height()
 		var obs_scale = obs.get_node("Sprite2D").scale
 		var obs_x : int = screen_size.x + score + 100
-		var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2) + 5
+		var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2)      
 		
 		add_obstacle(obs, obs_x, obs_y)
 
