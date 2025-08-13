@@ -72,7 +72,8 @@ func getting_hit(damage):
 	life -= damage
 
 	$HealthContainer.update_health(life)
-
+	$HitParticles.emitting = true
+	
 	if(life <= 0):
 		emit_signal("player_dies")
 

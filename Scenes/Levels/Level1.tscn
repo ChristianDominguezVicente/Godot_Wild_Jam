@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkggptrnicx"]
+[gd_scene load_steps=8 format=3 uid="uid://dkggptrnicx"]
 
 [ext_resource type="PackedScene" uid="uid://6rep0cac3re1" path="res://Scenes/Backgrounds/level_background_1.tscn" id="1_riv1q"]
 [ext_resource type="Script" uid="uid://dr6udo7txghur" path="res://Scripts/Levels/level_1.gd" id="1_xvio3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://df1jv7wxkbcl2" path="res://Scenes/HUD/HUDStart.tscn" id="5_kri6y"]
 [ext_resource type="PackedScene" uid="uid://bcsrf23rd6hep" path="res://Scenes/HUD/HUDRestart.tscn" id="6_4d3fe"]
 [ext_resource type="PackedScene" uid="uid://bkscv41bijeth" path="res://Scenes/HUD/HUDPause.tscn" id="7_3ipdw"]
+[ext_resource type="AudioStream" uid="uid://bmiad5bsi2h3l" path="res://Audio/BabakNivel.wav" id="7_8h4de"]
 
 [node name="Level1" type="Node"]
 process_mode = 3
@@ -28,6 +29,7 @@ visible = false
 visible = false
 
 [node name="Music_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8h4de")
 autoplay = true
 bus = &"Music"
 

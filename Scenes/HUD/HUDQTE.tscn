@@ -49,6 +49,6 @@ theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="KeyPress" type="AudioStreamPlayer2D" parent="."]
+[node name="KeyPress" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_lkgnh")
-volume_db = 2.0
+bus = &"SFX"

@@ -9,6 +9,31 @@ func _ready() -> void:
 	settings.visible = false
 	selector.visible = false
 	$MainButtons/Start.grab_focus()
+	print(Global.score)
+	if Global.score < 1000:
+		$Selector/HBoxContainer/Pukul/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
+		$Selector/HBoxContainer/Pukul/VBoxContainer/Stats.text = "Score needed: 1000"
+		$Selector/HBoxContainer/Gerakan/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
+		$Selector/HBoxContainer/Gerakan/VBoxContainer/Stats.text = "Score needed: 2000"
+		$Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
+		$Selector/HBoxContainer/Muntah/VBoxContainer/Stats.text = "Score needed: 3000"
+		$Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
+		$Selector/HBoxContainer/Kaki/VBoxContainer/Stats.text = "Score needed: 4000"
+	elif Global.score < 2000:
+		$Selector/HBoxContainer/Gerakan/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
+		$Selector/HBoxContainer/Gerakan/VBoxContainer/Stats.text = "Score needed: 2000"
+		$Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
+		$Selector/HBoxContainer/Muntah/VBoxContainer/Stats.text = "Score needed: 3000"
+		$Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
+		$Selector/HBoxContainer/Kaki/VBoxContainer/Stats.text = "Score needed: 4000"
+	elif Global.score < 3000:
+		$Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
+		$Selector/HBoxContainer/Muntah/VBoxContainer/Stats.text = "Score needed: 3000"
+		$Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
+		$Selector/HBoxContainer/Kaki/VBoxContainer/Stats.text = "Score needed: 4000"
+	elif Global.score < 4000:
+		$Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
+		$Selector/HBoxContainer/Kaki/VBoxContainer/Stats.text = "Score needed: 4000"
 
 func _input(event) -> void:
 	if event.is_action_released("ui_cancel"):
@@ -42,3 +67,23 @@ func _on_back_settings_pressed() -> void:
 func _on_babak_pressed() -> void:
 	Global.critter = "res://Scenes/Player/Babak.tscn"
 	get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
+
+func _on_pukul_pressed() -> void:
+	if Global.score >= 1000:
+		Global.critter = "res://Scenes/Player/Babak.tscn"
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
+
+func _on_gerakan_pressed() -> void:
+	if Global.score >= 2000:
+		Global.critter = "res://Scenes/Player/Babak.tscn"
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
+
+func _on_muntah_pressed() -> void:
+	if Global.score >= 3000:
+		Global.critter = "res://Scenes/Player/Babak.tscn"
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
+
+func _on_kaki_pressed() -> void:
+	if Global.score >= 4000:
+		Global.critter = "res://Scenes/Player/Babak.tscn"
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")

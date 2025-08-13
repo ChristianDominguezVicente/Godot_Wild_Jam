@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://kxrlmc5mas6w"]
+[gd_scene load_steps=10 format=3 uid="uid://kxrlmc5mas6w"]
 
 [ext_resource type="Texture2D" uid="uid://c2mrvfl7d7o1c" path="res://Assets/Spritesheets/Spit-Sheet.png" id="1_b13e7"]
 [ext_resource type="Script" uid="uid://cwd6iwyrwhhu2" path="res://Scripts/Projectiles/babak_spit.gd" id="1_gkh63"]
@@ -32,6 +32,13 @@ size = Vector2(18, 10)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Curve" id="Curve_ua85s"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_gotm5"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="BabakSpit" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 2
@@ -46,7 +53,7 @@ frame_progress = 0.819166
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b13e7")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="TrailParticles" type="CPUParticles2D" parent="."]
 amount = 20
 lifetime = 0.15
 lifetime_randomness = 1.0
@@ -59,3 +66,22 @@ scale_amount_min = 10.0
 scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_gkh63")
 color = Color(0.203922, 0.682353, 0.65098, 1)
+
+[node name="HitParticles" type="CPUParticles2D" parent="."]
+position = Vector2(7, 0)
+rotation = 3.14159
+emitting = false
+amount = 30
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, 0)
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 75.0
+initial_velocity_max = 100.0
+scale_amount_min = 15.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_ua85s")
+color = Color(0.427451, 0.737255, 0.596078, 1)
+color_ramp = SubResource("Gradient_gotm5")

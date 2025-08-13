@@ -15,6 +15,13 @@ func receive_damage(enter_damage : int):
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("projectiles"):
 		receive_damage(body.damage)
+		
+		var particles = body.get_node("HitParticles")
+		body.remove_child(particles)
+		get_tree().current_scene.add_child(particles)
+		particles.global_position = body.global_position
+		particles.emitting = true
+
 		body.queue_free()
 
 	if body.is_in_group("critter"):

@@ -128,6 +128,9 @@ func remove_obs(obs):
 	obstacles.erase(obs)
 
 func game_over():
+	if Global.score < (score / SCORE_INCREASE_SPEED):
+		Global.score = score / SCORE_INCREASE_SPEED
+	
 	get_tree().paused = true
 	player_ready = false
 	$HudRestart/Panel/MainButtons/Restart.grab_focus()

@@ -11,17 +11,17 @@
 [ext_resource type="AudioStream" uid="uid://bjnmtwnsctp0p" path="res://Audio/BabakMenu.wav" id="6_x2cqt"]
 [ext_resource type="Texture2D" uid="uid://dqe4fwidfsffc" path="res://Assets/Spritesheets/Babak_Walk.png" id="8_ac4b6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1upnj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofv6h"]
 atlas = ExtResource("3_ac4b6")
-region = Rect2(1152, 0, 1152, 648)
+region = Rect2(0, 648, 1152, 648)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0fcc"]
 atlas = ExtResource("3_ac4b6")
 region = Rect2(0, 0, 1152, 648)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ofv6h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1upnj"]
 atlas = ExtResource("3_ac4b6")
-region = Rect2(0, 648, 1152, 648)
+region = Rect2(1152, 0, 1152, 648)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g5cqd"]
 atlas = ExtResource("3_ac4b6")
@@ -182,10 +182,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_1upnj")
+texture = SubResource("AtlasTexture_ofv6h")
 script = ExtResource("6_h7084")
 sprites = SubResource("SpriteFrames_q10mx")
-frame_index = 1
+frame_index = 2
 auto_play = true
 playing = true
 
@@ -496,11 +496,18 @@ stretch_mode = 5
 script = ExtResource("6_h7084")
 sprites = SubResource("SpriteFrames_i80xk")
 
-[node name="Label" type="Label" parent="Selector/HBoxContainer/Babak/VBoxContainer"]
+[node name="Name" type="Label" parent="Selector/HBoxContainer/Babak/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 30
 text = "Babak"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="Selector/HBoxContainer/Babak/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 28
+text = "Spd: II Dmg: II Jump: II"
 horizontal_alignment = 1
 
 [node name="Pukul" type="Button" parent="Selector/HBoxContainer"]
@@ -527,11 +534,18 @@ stretch_mode = 5
 script = ExtResource("6_h7084")
 sprites = SubResource("SpriteFrames_i80xk")
 
-[node name="Label" type="Label" parent="Selector/HBoxContainer/Pukul/VBoxContainer"]
+[node name="Name" type="Label" parent="Selector/HBoxContainer/Pukul/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 30
 text = "Pukul"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="Selector/HBoxContainer/Pukul/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 28
+text = "Spd: I Dmg: III Jump: II"
 horizontal_alignment = 1
 
 [node name="Gerakan" type="Button" parent="Selector/HBoxContainer"]
@@ -558,11 +572,18 @@ stretch_mode = 5
 script = ExtResource("6_h7084")
 sprites = SubResource("SpriteFrames_i80xk")
 
-[node name="Label" type="Label" parent="Selector/HBoxContainer/Gerakan/VBoxContainer"]
+[node name="Name" type="Label" parent="Selector/HBoxContainer/Gerakan/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 30
 text = "Gerakan"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="Selector/HBoxContainer/Gerakan/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 28
+text = "Spd: III Dmg: I Jump: II"
 horizontal_alignment = 1
 
 [node name="Muntah" type="Button" parent="Selector/HBoxContainer"]
@@ -589,11 +610,18 @@ stretch_mode = 5
 script = ExtResource("6_h7084")
 sprites = SubResource("SpriteFrames_i80xk")
 
-[node name="Label" type="Label" parent="Selector/HBoxContainer/Muntah/VBoxContainer"]
+[node name="Name" type="Label" parent="Selector/HBoxContainer/Muntah/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 30
 text = "Muntah"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="Selector/HBoxContainer/Muntah/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 28
+text = "Spd: II Dmg: III Jump: I"
 horizontal_alignment = 1
 
 [node name="Kaki" type="Button" parent="Selector/HBoxContainer"]
@@ -620,11 +648,18 @@ stretch_mode = 5
 script = ExtResource("6_h7084")
 sprites = SubResource("SpriteFrames_i80xk")
 
-[node name="Label" type="Label" parent="Selector/HBoxContainer/Kaki/VBoxContainer"]
+[node name="Name" type="Label" parent="Selector/HBoxContainer/Kaki/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 30
 text = "Kaki"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="Selector/HBoxContainer/Kaki/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kulhe")
+theme_override_font_sizes/font_size = 28
+text = "Spd: II Dmg: I Jump: III"
 horizontal_alignment = 1
 
 [node name="Back" type="Button" parent="Selector"]
@@ -663,16 +698,20 @@ text = "Back"
 [connection signal="focus_exited" from="Selector/HBoxContainer/Pukul" to="Selector/HBoxContainer/Pukul/VBoxContainer/TextureRect" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Selector/HBoxContainer/Pukul" to="Selector/HBoxContainer/Pukul/VBoxContainer/TextureRect" method="_on_focus_entered"]
 [connection signal="mouse_exited" from="Selector/HBoxContainer/Pukul" to="Selector/HBoxContainer/Pukul/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="pressed" from="Selector/HBoxContainer/Pukul" to="." method="_on_pukul_pressed"]
 [connection signal="focus_entered" from="Selector/HBoxContainer/Gerakan" to="Selector/HBoxContainer/Gerakan/VBoxContainer/TextureRect" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Selector/HBoxContainer/Gerakan" to="Selector/HBoxContainer/Gerakan/VBoxContainer/TextureRect" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Selector/HBoxContainer/Gerakan" to="Selector/HBoxContainer/Gerakan/VBoxContainer/TextureRect" method="_on_focus_entered"]
 [connection signal="mouse_exited" from="Selector/HBoxContainer/Gerakan" to="Selector/HBoxContainer/Gerakan/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="pressed" from="Selector/HBoxContainer/Gerakan" to="." method="_on_gerakan_pressed"]
 [connection signal="focus_entered" from="Selector/HBoxContainer/Muntah" to="Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Selector/HBoxContainer/Muntah" to="Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Selector/HBoxContainer/Muntah" to="Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect" method="_on_focus_entered"]
 [connection signal="mouse_exited" from="Selector/HBoxContainer/Muntah" to="Selector/HBoxContainer/Muntah/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="pressed" from="Selector/HBoxContainer/Muntah" to="." method="_on_muntah_pressed"]
 [connection signal="focus_entered" from="Selector/HBoxContainer/Kaki" to="Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Selector/HBoxContainer/Kaki" to="Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Selector/HBoxContainer/Kaki" to="Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect" method="_on_focus_entered"]
 [connection signal="mouse_exited" from="Selector/HBoxContainer/Kaki" to="Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect" method="_on_focus_exited"]
+[connection signal="pressed" from="Selector/HBoxContainer/Kaki" to="." method="_on_kaki_pressed"]
 [connection signal="pressed" from="Selector/Back" to="." method="_on_back_settings_pressed"]
