@@ -1,6 +1,6 @@
 extends Control
 
-@onready var main_buttons: VBoxContainer = $MainButtons
+@onready var main_buttons: Panel = $MainButtons
 @onready var settings: Panel = $Settings
 @onready var selector: Panel = $Selector
 
@@ -9,7 +9,7 @@ func _ready() -> void:
 	settings.visible = false
 	selector.visible = false
 	$MainButtons/Start.grab_focus()
-	print(Global.score)
+
 	if Global.score < 1000:
 		$Selector/HBoxContainer/Pukul/VBoxContainer/TextureRect.modulate = Color(0, 0, 0)
 		$Selector/HBoxContainer/Pukul/VBoxContainer/Stats.text = "Score needed: 1000"
@@ -100,3 +100,83 @@ func _on_kaki_pressed() -> void:
 	if Global.score >= 4000:
 		Global.critter = "res://Scenes/Player/Babak.tscn"
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
+
+func _on_start_focus_entered() -> void:
+	$MainButtons/Start.z_index = 1
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($MainButtons/Start, "rotation_degrees", 15, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property($MainButtons/Start, "scale", Vector2(1.4, 1.4), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+func _on_start_focus_exited() -> void:
+	$MainButtons/Start.z_index = 0
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($MainButtons/Start, "rotation_degrees", 0, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tween.tween_property($MainButtons/Start, "scale", Vector2(1.0, 1.0), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	
+func _on_settings_focus_entered() -> void:
+	$MainButtons/Settings.z_index = 1
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($MainButtons/Settings, "rotation_degrees", -5, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property($MainButtons/Settings, "scale", Vector2(1.2, 1.2), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+func _on_settings_focus_exited() -> void:
+	$MainButtons/Settings.z_index = 0
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($MainButtons/Settings, "rotation_degrees", 0, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tween.tween_property($MainButtons/Settings, "scale", Vector2(1.0, 1.0), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+
+func _on_credits_focus_entered() -> void:
+	$MainButtons/Credits.z_index = 1
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($MainButtons/Credits, "rotation_degrees", 20, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property($MainButtons/Credits, "scale", Vector2(1.3, 1.3), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+func _on_credits_focus_exited() -> void:
+	$MainButtons/Credits.z_index = 0
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($MainButtons/Credits, "rotation_degrees", 0, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tween.tween_property($MainButtons/Credits, "scale", Vector2(1.0, 1.0), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+
+func _on_exit_focus_entered() -> void:
+	$MainButtons/Exit.z_index = 1
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($MainButtons/Exit, "rotation_degrees", -10, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property($MainButtons/Exit, "scale", Vector2(1.1, 1.1), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+func _on_exit_focus_exited() -> void:
+	$MainButtons/Exit.z_index = 0
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($MainButtons/Exit, "rotation_degrees", 0, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tween.tween_property($MainButtons/Exit, "scale", Vector2(1.0, 1.0), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
