@@ -1,13 +1,50 @@
-[gd_scene load_steps=27 format=3 uid="uid://cu0mpxcur7ieu"]
+[gd_scene load_steps=33 format=3 uid="uid://cu0mpxcur7ieu"]
 
 [ext_resource type="Script" uid="uid://df8bk3e8eqxm3" path="res://Scripts/Menu/Menu.gd" id="1_1kgdg"]
 [ext_resource type="Script" uid="uid://bs1mqdv6q5s5s" path="res://Scripts/Menu/AudioControl.gd" id="2_3kh17"]
 [ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_kulhe"]
+[ext_resource type="Texture2D" uid="uid://puwretdubcon" path="res://Assets/Backgrounds/Menu/MenuBG-Sheet.png" id="3_ac4b6"]
 [ext_resource type="Script" uid="uid://bht0rgxfwih1u" path="res://Scripts/Menu/FullScreenControl.gd" id="3_kqkty"]
 [ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="3_l7xyq"]
 [ext_resource type="Script" uid="uid://gtunx1nv70ee" path="res://Scripts/Menu/AnimatedTextureRect.gd" id="6_h7084"]
 [ext_resource type="Texture2D" uid="uid://bcljvjuwg634h" path="res://babak-icon.png" id="6_uw0ty"]
 [ext_resource type="Texture2D" uid="uid://dqe4fwidfsffc" path="res://Assets/Spritesheets/Babak_Walk.png" id="8_ac4b6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1upnj"]
+atlas = ExtResource("3_ac4b6")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0fcc"]
+atlas = ExtResource("3_ac4b6")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofv6h"]
+atlas = ExtResource("3_ac4b6")
+region = Rect2(0, 648, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5cqd"]
+atlas = ExtResource("3_ac4b6")
+region = Rect2(1152, 648, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q10mx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0fcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1upnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofv6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5cqd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uw0ty"]
 
@@ -46,7 +83,7 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kulhe"]
-bg_color = Color(0.217098, 0.222122, 0.244837, 1)
+bg_color = Color(0.215686, 0.223529, 0.243137, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -137,7 +174,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1kgdg")
 
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1upnj")
+script = ExtResource("6_h7084")
+sprites = SubResource("SpriteFrames_q10mx")
+frame_index = 1
+auto_play = true
+playing = true
+
 [node name="Background" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -146,6 +198,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y5kka")
 
+[node name="Title" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.5
+offset_top = -293.5
+offset_right = 246.5
+offset_bottom = -110.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_l7xyq")
+theme_override_font_sizes/font_size = 150
+text = "Babak & Co."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MainButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -153,10 +228,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -195.0
-offset_top = -70.0
-offset_right = 193.0
-offset_bottom = 213.0
+offset_top = -46.0
+offset_right = 388.0
+offset_bottom = 237.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -223,28 +297,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
 theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
 text = "Exit"
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -246.5
-offset_top = -293.5
-offset_right = 246.5
-offset_bottom = -110.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 10
-theme_override_fonts/font = ExtResource("3_l7xyq")
-theme_override_font_sizes/font_size = 150
-text = "Babak & Co."
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Music_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
 bus = &"Music"
@@ -261,10 +313,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -258.0
-offset_top = -121.0
-offset_right = 259.0
-offset_bottom = 232.0
+offset_left = -56.0
+offset_top = -68.0
+offset_right = 461.0
+offset_bottom = 285.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kulhe")
@@ -373,17 +425,18 @@ text = "Back"
 [node name="Selector" type="Panel" parent="."]
 visible = false
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -553.5
-offset_top = -125.0
-offset_right = 553.5
-offset_bottom = 289.0
+anchor_bottom = 1.0
+offset_left = -376.0
+offset_top = -328.0
+offset_right = 731.0
+offset_bottom = 86.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
 theme_override_styles/panel = SubResource("StyleBoxFlat_kulhe")
 
 [node name="Label" type="Label" parent="Selector"]
