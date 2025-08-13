@@ -514,7 +514,7 @@ states/jump/position = Vector2(585, 89)
 states/walk/node = SubResource("AnimationNodeBlendTree_41rod")
 states/walk/position = Vector2(450, 89)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_eecql"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_1y8qt"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_u1rob"), "fell", "walk", SubResource("AnimationNodeStateMachineTransition_qoolx"), "falling", "fell", SubResource("AnimationNodeStateMachineTransition_flaw1"), "jump", "falling", SubResource("AnimationNodeStateMachineTransition_ymcik"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_41rod")]
-graph_offset = Vector2(65, -65)
+graph_offset = Vector2(80, 12)
 
 [sub_resource type="Curve" id="Curve_41rod"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -535,7 +535,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
 animation = &"idle"
 autoplay = "idle"
-frame = 3
+frame = 5
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")
@@ -592,7 +592,7 @@ parameters/jump/TimeScale/scale = 0.5
 parameters/walk/TimeScale/scale = 0.5
 
 [node name="CooldownShootTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 
 [node name="LandedParticles" type="CPUParticles2D" parent="."]
 position = Vector2(0, 15.3333)
@@ -603,6 +603,7 @@ one_shot = true
 explosiveness = 1.0
 emission_shape = 3
 emission_rect_extents = Vector2(20, 1)
+gravity = Vector2(2000, 980)
 scale_amount_min = 10.0
 scale_amount_max = 15.0
 scale_amount_curve = SubResource("Curve_41rod")

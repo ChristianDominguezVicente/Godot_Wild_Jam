@@ -11,6 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://bjnmtwnsctp0p" path="res://Audio/BabakMenu.wav" id="6_x2cqt"]
 [ext_resource type="Texture2D" uid="uid://dqe4fwidfsffc" path="res://Assets/Spritesheets/Babak_Walk.png" id="8_ac4b6"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5cqd"]
+atlas = ExtResource("3_ac4b6")
+region = Rect2(1152, 648, 1152, 648)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0fcc"]
 atlas = ExtResource("3_ac4b6")
 region = Rect2(0, 0, 1152, 648)
@@ -22,10 +26,6 @@ region = Rect2(1152, 0, 1152, 648)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofv6h"]
 atlas = ExtResource("3_ac4b6")
 region = Rect2(0, 648, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g5cqd"]
-atlas = ExtResource("3_ac4b6")
-region = Rect2(1152, 648, 1152, 648)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q10mx"]
 animations = [{
@@ -182,9 +182,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_o0fcc")
+texture = SubResource("AtlasTexture_g5cqd")
 script = ExtResource("6_h7084")
 sprites = SubResource("SpriteFrames_q10mx")
+frame_index = 3
 auto_play = true
 playing = true
 
