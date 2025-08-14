@@ -4,6 +4,12 @@ extends Node
 var wall_scene = preload("res://Scenes/Obstacles/Wall.tscn")
 var waste_scene = preload("res://Scenes/Obstacles/Waste.tscn")
 
+var platform1_scene = preload("res://Scenes/Platforms/Platform1.tscn")
+var platform2_scene = preload("res://Scenes/Platforms/Platform2.tscn")
+var platform3_scene = preload("res://Scenes/Platforms/Platform3.tscn")
+var platform4_scene = preload("res://Scenes/Platforms/Platform4.tscn")
+var platform5_scene = preload("res://Scenes/Platforms/Platform5.tscn")
+
 ###########################################
 ## BORRAR HACER CON UN OBJETO CON HITBOX ##
 ###########################################
@@ -11,6 +17,8 @@ var qte_scene = preload("res://Scenes/HUD/HUDQTE.tscn")
 
 var obstacles_scenes := [wall_scene, waste_scene]
 var obstacles : Array
+
+var platforms_scenes := [platform1_scene, platform2_scene, platform3_scene, platform4_scene, platform5_scene]
 
 const PLAYER_START_LOCATION := Vector2i(70, 485)
 const CAM_START_LOCATION := Vector2i(576, 324)
@@ -105,11 +113,21 @@ func generate_obstacle():
 		var obs_x : int = screen_size.x + score + 100
 		var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2)      
 		
-		add_obstacle(obs, obs_x, obs_y)
+		add_obstacle(obs, obs_x, obs_y, true)
+		
+		if randf() < 0.5:
+			var plat_type = platforms_scenes[randi() % platforms_scenes.size()]
+			var plat = plat_type.instantiate()
+			
+			var plat_x : int = obs_x + randi_range(350, 450)
+			var plat_y : int = screen_size.y - ground_height - randi_range(100, 300)
+			
+			add_obstacle(plat, plat_x, plat_y, false)
 
-func add_obstacle(obs, x, y):
+func add_obstacle(obs, x, y, flag):
 	obs.position = Vector2i(x, y)
-	last_obstacle = obs
+	if flag:
+		last_obstacle = obs
 	add_child(obs)
 	obstacles.append(obs)
 
