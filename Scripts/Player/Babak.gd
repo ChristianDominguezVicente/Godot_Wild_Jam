@@ -4,6 +4,8 @@ extends CharacterBody2D
 const GRAVITY : int = 4200
 const JUMP_SPEED : int = -1800
 const MAX_HEALTH : int = 3
+const DEFAULT_SHOOT_SPEED : float = 0.5
+const DEFAULT_SPEED_MULTIPLICATOR_MOVEMENT : int = 10
 
 @onready var anim_tree : AnimationTree = $AnimationTree
 @onready var shoot_cooldown : Timer = $CooldownShootTimer
@@ -12,6 +14,7 @@ const MAX_HEALTH : int = 3
 @export var life : int
 @export var projectile : PackedScene
 @export var speed_multiplicator : int
+@export var shoot_cadence : float
 
 var speed : int
 var jumping : bool
@@ -26,9 +29,11 @@ signal player_dies
 
 func _ready() -> void:
 	life = MAX_HEALTH
-	speed_multiplicator = 10
+	speed_multiplicator = DEFAULT_SPEED_MULTIPLICATOR_MOVEMENT
 	able_move_left = true
 	able_move_right = true
+	shoot_cadence = DEFAULT_SHOOT_SPEED
+	shoot_cooldown.wait_time = shoot_cadence
 	$HealthContainer.update_health(life)
 	add_to_group("critter")
 	shoot_ready = true
@@ -76,6 +81,22 @@ func _physics_process(delta: float) -> void:
 
 		move_and_slide()
 
+func reduce_cadence(cadence_reduction_value : float):
+	if (DEFAULT_SHOOT_SPEED - cadence_reduction_value) > 0:
+		self.shoot_cadence = DEFAULT_SHOOT_SPEED - cadence_reduction_value
+
+	shoot_cooldown.wait_time = self.shoot_cadence
+
+func reset_shoot_cadence():
+	self.shoot_cadence = DEFAULT_SHOOT_SPEED
+	shoot_cooldown.wait_time = self.shoot_cadence
+
+func increase_movement_speed(movement_speed : float):
+	self.speed_multiplicator += movement_speed
+
+func reset_movement_speed():
+	self.speed_multiplicator = DEFAULT_SPEED_MULTIPLICATOR_MOVEMENT
+
 func change_pos(pos : Vector2i):
 	self.position = pos
 
@@ -100,6 +121,7 @@ func getting_hit(damage):
 	$Hit_AudioStreamPlayer.play()
 	
 	if(life <= 0):
+		set_able_move(false, false)
 		emit_signal("player_dies")
 
 func recover_health(health : int):
