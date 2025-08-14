@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://6rep0cac3re1" path="res://Scenes/Backgrounds/level_background_1.tscn" id="1_riv1q"]
 [ext_resource type="Script" uid="uid://dr6udo7txghur" path="res://Scripts/Levels/level_1.gd" id="1_xvio3"]
 [ext_resource type="PackedScene" uid="uid://i4njobr6h5qm" path="res://Scenes/StaticObjects/Ground.tscn" id="2_xvio3"]
+[ext_resource type="PackedScene" uid="uid://b4c5cobnq765f" path="res://Scenes/Camera/camera_with_limits.tscn" id="4_3ipdw"]
 [ext_resource type="PackedScene" uid="uid://df1jv7wxkbcl2" path="res://Scenes/HUD/HUDStart.tscn" id="5_kri6y"]
 [ext_resource type="PackedScene" uid="uid://bcsrf23rd6hep" path="res://Scenes/HUD/HUDRestart.tscn" id="6_4d3fe"]
 [ext_resource type="PackedScene" uid="uid://bkscv41bijeth" path="res://Scenes/HUD/HUDPause.tscn" id="7_3ipdw"]
@@ -17,7 +18,7 @@ script = ExtResource("1_xvio3")
 [node name="Ground" parent="." instance=ExtResource("2_xvio3")]
 position = Vector2(0, 8)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" parent="." instance=ExtResource("4_3ipdw")]
 position = Vector2(576, 324)
 
 [node name="HudStart" parent="." instance=ExtResource("5_kri6y")]

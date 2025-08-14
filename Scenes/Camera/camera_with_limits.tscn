@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4c5cobnq765f"]
+
+[ext_resource type="Script" uid="uid://docx1tveu6rk4" path="res://Scenes/Camera/camera_with_limits.gd" id="1_ab5xi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8akc"]
+size = Vector2(36, 682)
+
+[node name="Camera2D" type="Camera2D"]
+editor_draw_limits = true
+script = ExtResource("1_ab5xi")
+
+[node name="LeftArea" type="Area2D" parent="."]
+
+[node name="LeftLimit" type="CollisionShape2D" parent="LeftArea"]
+position = Vector2(-578, 0)
+shape = SubResource("RectangleShape2D_g8akc")
+
+[node name="MiddleArea" type="Area2D" parent="."]
+
+[node name="MiddleLimit" type="CollisionShape2D" parent="MiddleArea"]
+shape = SubResource("RectangleShape2D_g8akc")
+
+[connection signal="body_entered" from="LeftArea" to="." method="_on_left_area_body_entered"]
+[connection signal="body_exited" from="LeftArea" to="." method="_on_left_area_body_exited"]
+[connection signal="body_entered" from="MiddleArea" to="." method="_on_middle_area_body_entered"]
+[connection signal="body_exited" from="MiddleArea" to="." method="_on_middle_area_body_exited"]

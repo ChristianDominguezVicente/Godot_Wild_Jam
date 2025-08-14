@@ -11,15 +11,24 @@ const MAX_HEALTH : int = 3
 @export_group("Character Stats")
 @export var life : int
 @export var projectile : PackedScene
+@export var speed_multiplicator : int
 
 var speed : int
 var jumping : bool
 var shoot_ready : bool
+var level_base_speed : float
+var moving_direction : int
+
+var able_move_left : bool
+var able_move_right : bool
 
 signal player_dies
 
 func _ready() -> void:
 	life = MAX_HEALTH
+	speed_multiplicator = 10
+	able_move_left = true
+	able_move_right = true
 	$HealthContainer.update_health(life)
 	add_to_group("critter")
 	shoot_ready = true
@@ -51,6 +60,16 @@ func _physics_process(delta: float) -> void:
 			if velocity.y <= 200:
 				anim_tree["parameters/conditions/has_jumped"] = false
 				anim_tree["parameters/conditions/is_falling"] = true
+
+		moving_direction = 0
+		
+		if Input.is_action_pressed("right") and able_move_right:
+			moving_direction = 1
+
+		if Input.is_action_pressed("left") and able_move_left:
+			moving_direction = -1
+		
+		velocity.x = moving_direction * (speed * speed_multiplicator)
 		
 		if Input.is_action_pressed("action"):
 			shoot()
@@ -68,6 +87,10 @@ func change_vel(vel : Vector2i):
 
 func set_speed(new_speed : int):
 	self.speed = new_speed
+
+func set_able_move(left : bool, right : bool):
+	able_move_left = left
+	able_move_right = right
 
 func getting_hit(damage):
 	life -= damage
