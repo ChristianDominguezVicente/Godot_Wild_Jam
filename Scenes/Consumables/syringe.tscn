@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c2eqggf8shjkj"]
 
-[ext_resource type="Script" uid="uid://cak0rakexjrop" path="res://Scripts/Consumables/uraniun_root.gd" id="1_prv8m"]
+[ext_resource type="Script" uid="uid://bx6fai1uhhb5l" path="res://Scripts/Consumables/syringe.gd" id="1_prv8m"]
 [ext_resource type="Texture2D" uid="uid://comd0img18hyc" path="res://icon.svg" id="2_eli82"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x7j55"]

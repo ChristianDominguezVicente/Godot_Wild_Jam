@@ -159,13 +159,16 @@ func add_obstacle(obs, x, y, flag):
 
 func clear_passed_obs():
 	for obs in obstacles:
-		if obs.position.x < ($Camera2D.position.x - screen_size.x):
+		if obs == null:
+			obstacles.erase(obs)
+		elif not obs.is_in_group("consumable") and obs.position.x < ($Camera2D.position.x - screen_size.x):
 			remove_obs(obs)
 			break
 
 func clear_all_obs():
 	for obs in obstacles:
-		obs.queue_free()
+		if obs != null:
+			obs.queue_free()
 
 	obstacles.clear()
 

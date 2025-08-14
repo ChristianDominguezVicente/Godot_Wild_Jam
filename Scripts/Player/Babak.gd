@@ -25,9 +25,12 @@ var moving_direction : int
 var able_move_left : bool
 var able_move_right : bool
 
+var effect_states : int
+
 signal player_dies
 
 func _ready() -> void:
+	effect_states = 0
 	life = MAX_HEALTH
 	speed_multiplicator = DEFAULT_SPEED_MULTIPLICATOR_MOVEMENT
 	able_move_left = true
@@ -82,20 +85,33 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func reduce_cadence(cadence_reduction_value : float):
-	if (DEFAULT_SHOOT_SPEED - cadence_reduction_value) > 0:
-		self.shoot_cadence = DEFAULT_SHOOT_SPEED - cadence_reduction_value
+	if not (effect_states & 1):
+		if (DEFAULT_SHOOT_SPEED - cadence_reduction_value) > 0:
+			self.shoot_cadence = DEFAULT_SHOOT_SPEED - cadence_reduction_value
+			self.effect_states ^= 1
+	else:
+		print("NO STACKEO DISPARO")
 
-	shoot_cooldown.wait_time = self.shoot_cadence
+		shoot_cooldown.wait_time = self.shoot_cadence
 
 func reset_shoot_cadence():
 	self.shoot_cadence = DEFAULT_SHOOT_SPEED
+	self.effect_states ^= 1
 	shoot_cooldown.wait_time = self.shoot_cadence
 
 func increase_movement_speed(movement_speed : float):
-	self.speed_multiplicator += movement_speed
+	if not (effect_states & 2):
+		self.speed_multiplicator += movement_speed
+		self.effect_states ^= 2
+	else:
+		print("NO STACKEO")
 
 func reset_movement_speed():
+	self.effect_states ^= 2
 	self.speed_multiplicator = DEFAULT_SPEED_MULTIPLICATOR_MOVEMENT
+
+func get_effect_state() -> int:
+	return self.effect_states
 
 func change_pos(pos : Vector2i):
 	self.position = pos
