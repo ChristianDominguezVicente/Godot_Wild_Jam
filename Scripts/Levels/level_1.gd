@@ -30,6 +30,8 @@ var player
 
 var last_obstacle
 var qte_instance
+var qte_arrows : int = 4
+var qte_time : float = 10.0
 
 func _ready() -> void:
 	screen_size = Vector2i(1152, 648)
@@ -157,6 +159,9 @@ func start_qte():
 	get_tree().paused = true
 	qte_instance = qte_scene.instantiate()
 	add_child(qte_instance)
+	qte_instance.start_qte(qte_arrows, qte_time)
+	qte_arrows += 1
+	qte_time -= 1
 	qte_instance.connect("qte_finished", _on_qte_finished)
 
 func _on_qte_finished(success : bool):

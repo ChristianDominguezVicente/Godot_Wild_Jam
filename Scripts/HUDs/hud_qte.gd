@@ -17,7 +17,6 @@ var arrow_scenes := {
 }
 
 func _ready() -> void:
-	start_qte(5, 5.0)
 	timer.timeout.connect(Callable(self, "_on_time_up"))
 
 func start_qte(num: int, time: float) -> void:
