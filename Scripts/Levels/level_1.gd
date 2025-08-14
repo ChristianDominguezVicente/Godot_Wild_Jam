@@ -131,7 +131,7 @@ func generate_obstacle():
 			var plat_type = platforms_scenes[randi() % platforms_scenes.size()]
 			var plat = plat_type.instantiate()
 			
-			var plat_x : int = obs_x + randi_range(350, 450)
+			var plat_x : int = obs_x + randi_range(350, 400)
 			var plat_y : int = screen_size.y - ground_height - randi_range(100, 300)
 			
 			add_obstacle(plat, plat_x, plat_y, false)
