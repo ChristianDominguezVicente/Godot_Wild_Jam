@@ -11,10 +11,9 @@ func receive_damage(enter_damage : int):
 	
 	$AnimatedSprite2D.animation = "broken_" + str(life)
 	$AnimatedSprite2D.play()
-	$Broken1_AudioStreamPlayer.play()
 
 	if life <= 0:
-		$Broken2_AudioStreamPlayer.play()
+		$Broken1_AudioStreamPlayer.play()
 		hitbox.set_deferred("disabled", true)
 
 func _on_body_entered(body: Node2D) -> void:
@@ -33,4 +32,5 @@ func _on_body_entered(body: Node2D) -> void:
 		body.getting_hit(damage)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
+	$Broken2_AudioStreamPlayer.play()
 	self.hide()
