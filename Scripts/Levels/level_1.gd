@@ -152,6 +152,8 @@ func pause():
 ## BORRAR HACER CON UN OBJETO CON HITBOX ##
 ###########################################
 func start_qte():
+	$Music_AudioStreamPlayer.volume_db -= 10
+	
 	get_tree().paused = true
 	qte_instance = qte_scene.instantiate()
 	add_child(qte_instance)
@@ -166,6 +168,8 @@ func _on_qte_finished(success : bool):
 	if qte_instance:
 		qte_instance.queue_free()
 		qte_instance = null
+	
+	$Music_AudioStreamPlayer.volume_db += 10
 	
 	get_tree().paused = false
    

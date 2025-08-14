@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 					velocity.y = JUMP_SPEED
 					jumping = true
 					anim_tree["parameters/conditions/has_jumped"] = true
+					$Jump_AudioStreamPlayer.play()
 				elif jumping:
 					jumping = false
 					anim_tree["parameters/conditions/is_falling"] = false
@@ -73,6 +74,7 @@ func getting_hit(damage):
 
 	$HealthContainer.update_health(life)
 	$HitParticles.emitting = true
+	$Hit_AudioStreamPlayer.play()
 	
 	if(life <= 0):
 		emit_signal("player_dies")
@@ -84,7 +86,8 @@ func recover_health(health : int):
 		life += health
 
 	$HealthContainer.update_health(life)
-
+	$Cure_AudioStreamPlayer.play()
+	
 func reset():
 	anim_tree["parameters/conditions/has_jumped"] = false
 	anim_tree["parameters/conditions/has_fell"] = false
@@ -98,6 +101,7 @@ func shoot() -> void:
 	if shoot_ready:
 		shoot_ready = false
 		var temp_projectile = projectile.instantiate()
+		$Shoot_AudioStreamPlayer.play()
 
 		temp_projectile.set_speed(speed)
 		temp_projectile.position = $Mouth.global_position

@@ -1,8 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcsrf23rd6hep"]
+[gd_scene load_steps=15 format=3 uid="uid://bcsrf23rd6hep"]
 
 [ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="1_slwem"]
 [ext_resource type="Script" uid="uid://d4aoba4b84h4q" path="res://Scripts/HUDs/hud_restart.gd" id="1_tq6dx"]
 [ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_onlny"]
+[ext_resource type="AudioStream" uid="uid://befi63b07rxld" path="res://Audio/UIBackBabakBack.wav" id="4_3dlkj"]
+[ext_resource type="AudioStream" uid="uid://dcb0hjlcluop" path="res://Audio/UIchangeSelection.wav" id="5_y2a2b"]
+[ext_resource type="AudioStream" uid="uid://sj5yqeyajwhj" path="res://Audio/UISelect.wav" id="6_ebo2o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq6dx"]
 bg_color = Color(0.170347, 0.264899, 0.299892, 1)
@@ -150,6 +153,18 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ebo2o")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jiaa6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lf6v8")
 text = "Exit"
+
+[node name="Back_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3dlkj")
+bus = &"SFX"
+
+[node name="ChangeSelection_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_y2a2b")
+bus = &"SFX"
+
+[node name="Select_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ebo2o")
+bus = &"SFX"
 
 [connection signal="pressed" from="Panel/MainButtons/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Panel/MainButtons/Exit" to="." method="_on_exit_pressed"]

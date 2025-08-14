@@ -50,7 +50,7 @@ func _process(_delta: float) -> void:
 		if current_index >= sequence.size():
 			end_qte(true)
 		
-		$KeyPress.play()
+		$KeyPress_AudioStreamPlayer.play()
 
 	elif Input.is_action_just_pressed("up") \
 		or Input.is_action_just_pressed("down") \

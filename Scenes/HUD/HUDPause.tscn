@@ -354,17 +354,14 @@ text = "Back"
 
 [node name="Back_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_dl88k")
-autoplay = true
 bus = &"SFX"
 
 [node name="ChangeSelection_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ah1od")
-autoplay = true
 bus = &"SFX"
 
 [node name="Select_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_lh5a6")
-autoplay = true
 bus = &"SFX"
 
 [connection signal="pressed" from="Panel/MainButtons/Resume" to="." method="_on_resume_pressed"]

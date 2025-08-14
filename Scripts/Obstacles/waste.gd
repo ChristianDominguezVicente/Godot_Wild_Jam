@@ -8,9 +8,12 @@ extends Area2D
 
 func receive_damage(enter_damage : int):
 	life -= enter_damage
+	
+	$AnimatedSprite2D.animation = "broken_" + str(life)
+	$AnimatedSprite2D.play()
 
 	if life <= 0:
-		destroy()
+		hitbox.set_deferred("disabled", true)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("projectiles"):
@@ -27,6 +30,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("critter"):
 		body.getting_hit(damage)
 
-func destroy():
-	hitbox.set_deferred("disabled", true)
+func _on_animated_sprite_2d_animation_finished() -> void:
 	self.hide()

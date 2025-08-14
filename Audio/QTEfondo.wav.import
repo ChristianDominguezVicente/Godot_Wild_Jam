@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bjnmtwnsctp0p"
-path="res://.godot/imported/BabakMenu.wav-10ed5310b53f0bf23968c0be28c31e47.sample"
+uid="uid://st7h3jkeuvca"
+path="res://.godot/imported/QTEfondo.wav-4ef9d330dd4aa7fb119e08f5e7d333fa.sample"
 
 [deps]
 
-source_file="res://Audio/BabakMenu.wav"
-dest_files=["res://.godot/imported/BabakMenu.wav-10ed5310b53f0bf23968c0be28c31e47.sample"]
+source_file="res://Audio/QTEfondo.wav"
+dest_files=["res://.godot/imported/QTEfondo.wav-4ef9d330dd4aa7fb119e08f5e7d333fa.sample"]
 
 [params]
 

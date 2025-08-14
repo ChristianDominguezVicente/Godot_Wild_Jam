@@ -1,7 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://1jpvaiuk6ppy"]
+[gd_scene load_steps=10 format=3 uid="uid://1jpvaiuk6ppy"]
 
 [ext_resource type="Texture2D" uid="uid://bvgpb7vq5y3wh" path="res://Assets/Obstacles/Waste.png" id="1_d1d4k"]
 [ext_resource type="Script" uid="uid://0ycglaj7msvv" path="res://Scripts/Obstacles/waste.gd" id="1_j1dbc"]
+[ext_resource type="Texture2D" uid="uid://bwuvl6b02nddl" path="res://Assets/Spritesheets/FloorObstacle-Sheet.png" id="3_klpvu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m18l"]
+atlas = ExtResource("3_klpvu")
+region = Rect2(192, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gyl1"]
+atlas = ExtResource("3_klpvu")
+region = Rect2(288, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8g3mt"]
+atlas = ExtResource("3_klpvu")
+region = Rect2(384, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klpvu"]
+atlas = ExtResource("3_klpvu")
+region = Rect2(0, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fck1m"]
+atlas = ExtResource("3_klpvu")
+region = Rect2(96, 0, 96, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3cr7w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m18l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gyl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8g3mt")
+}],
+"loop": false,
+"name": &"broken_0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klpvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fck1m")
+}],
+"loop": true,
+"name": &"broken_1",
+"speed": 10.0
+}]
 
 [node name="Waste" type="Area2D"]
 collision_layer = 3
@@ -9,13 +58,22 @@ collision_mask = 3
 script = ExtResource("1_j1dbc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("1_d1d4k")
 centered = false
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(113, 73)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3cr7w")
+animation = &"broken_1"
+autoplay = "broken_1"
+
 [node name="Hitbox" type="CollisionPolygon2D" parent="."]
 position = Vector2(1, 0)
 scale = Vector2(0.32, 0.32)
-polygon = PackedVector2Array(343, 13.7, 241.2, 87.5, 46.875, 375, 646.875, 375, 629.2, 272.6)
+polygon = PackedVector2Array(353.125, 125, 256.25, 140.625, 165.625, 196.875, 53.125, 337.5, 46.875, 375, 646.875, 375, 643.75, 337.5, 553.125, 215.625, 471.875, 156.25)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
