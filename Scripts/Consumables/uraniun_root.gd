@@ -6,9 +6,10 @@ var affected_player
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("critter"):
+		$AnimatedSprite2D.hide()
+		$CPUParticles2D.emitting = true
 		affected_player = body
 		affected_player.increase_movement_speed(movement_speed_increase_value)
-		self.hide()
 		$EffectDuration.start()
 
 

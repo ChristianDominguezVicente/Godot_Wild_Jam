@@ -10,6 +10,9 @@ var platform3_scene = preload("res://Scenes/Platforms/Platform3.tscn")
 var platform4_scene = preload("res://Scenes/Platforms/Platform4.tscn")
 var platform5_scene = preload("res://Scenes/Platforms/Platform5.tscn")
 
+var syringe_scene = preload("res://Scenes/Consumables/syringe.tscn")
+var uranium_scene = preload("res://Scenes/Consumables/uraniun_root.tscn")
+
 ###########################################
 ## BORRAR HACER CON UN OBJETO CON HITBOX ##
 ###########################################
@@ -19,6 +22,8 @@ var obstacles_scenes := [wall_scene, waste_scene]
 var obstacles : Array
 
 var platforms_scenes := [platform1_scene, platform2_scene, platform3_scene, platform4_scene, platform5_scene]
+
+var consumables_scenes := [syringe_scene, uranium_scene]
 
 const PLAYER_START_LOCATION := Vector2i(70, 485)
 const CAM_START_LOCATION := Vector2i(576, 324)
@@ -135,6 +140,15 @@ func generate_obstacle():
 			var plat_y : int = screen_size.y - ground_height - randi_range(100, 300)
 			
 			add_obstacle(plat, plat_x, plat_y, false)
+			
+			if randf() < 0.75:
+				var consumable_type = consumables_scenes[randi() % consumables_scenes.size()]
+				var consumable = consumable_type.instantiate()
+				
+				var plat_center_x = plat.position.x + randi_range(40, 50)
+				var plat_top_y = plat.position.y - 75
+				
+				add_obstacle(consumable, plat_center_x, plat_top_y, false)
 
 func add_obstacle(obs, x, y, flag):
 	obs.position = Vector2i(x, y)
