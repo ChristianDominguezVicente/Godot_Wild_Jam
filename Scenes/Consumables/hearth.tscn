@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddaqg6rbmxmrk"]
+
+[ext_resource type="Script" uid="uid://df84wwvx7iy3q" path="res://Scripts/Consumables/hearth.gd" id="1_7st2s"]
+[ext_resource type="Texture2D" uid="uid://r14q8gkkw04x" path="res://Assets/Spritesheets/Hearth.png" id="1_jqf0o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7st2s"]
+atlas = ExtResource("1_jqf0o")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slglb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7st2s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyylf"]
+size = Vector2(56, 58)
+
+[sub_resource type="Curve" id="Curve_x7j55"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_slglb"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Hearth" type="Area2D"]
+script = ExtResource("1_7st2s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.11219, 3.11219)
+sprite_frames = SubResource("SpriteFrames_slglb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dyylf")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 30
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 75.0
+initial_velocity_max = 100.0
+scale_amount_min = 20.0
+scale_amount_max = 25.0
+scale_amount_curve = SubResource("Curve_x7j55")
+color_ramp = SubResource("Gradient_slglb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
