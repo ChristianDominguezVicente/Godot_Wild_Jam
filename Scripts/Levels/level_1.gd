@@ -51,6 +51,7 @@ func _process(_delta: float) -> void:
 			main_level_logic()
 		else:
 			if Input.is_action_pressed("action"):
+				player.set_able_move(true, true)
 				player_ready = true
 				$HudStart.hide_ready_msg()
 
@@ -103,7 +104,18 @@ func generate_obstacle():
 		var obs_height = obs.get_node("Sprite2D").texture.get_height()
 		var obs_scale = obs.get_node("Sprite2D").scale
 		var obs_x : int = screen_size.x + score + 100
-		var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2)      
+		var obs_y : int
+
+		if obs_type == wall_scene:
+			var random_wall_height = randf_range(0.5, 1.2)
+			obs.get_node("Sprite2D").scale.y = random_wall_height
+			obs_scale = obs.get_node("Sprite2D").scale
+			obs_y = screen_size.y - ground_height - (obs_height * obs_scale.y / 2)
+
+		if obs_type == waste_scene:
+			obs_y = screen_size.y - ground_height - obs_height * obs_scale.y + 10
+		else:
+			obs_y = screen_size.y - ground_height - (obs_height * obs_scale.y / 2)
 		
 		add_obstacle(obs, obs_x, obs_y)
 

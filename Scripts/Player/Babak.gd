@@ -100,6 +100,7 @@ func getting_hit(damage):
 	$Hit_AudioStreamPlayer.play()
 	
 	if(life <= 0):
+		set_able_move(false, false)
 		emit_signal("player_dies")
 
 func recover_health(health : int):
