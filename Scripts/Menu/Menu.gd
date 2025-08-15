@@ -83,22 +83,22 @@ func _on_babak_pressed() -> void:
 
 func _on_pukul_pressed() -> void:
 	if Global.score >= 1000:
-		Global.critter = "res://Scenes/Player/Babak.tscn"
+		Global.critter = "res://Scenes/Player/Pukul.tscn"
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
 
 func _on_gerakan_pressed() -> void:
 	if Global.score >= 2000:
-		Global.critter = "res://Scenes/Player/Babak.tscn"
+		Global.critter = "res://Scenes/Player/Gerakan.tscn"
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
 
 func _on_muntah_pressed() -> void:
 	if Global.score >= 3000:
-		Global.critter = "res://Scenes/Player/Babak.tscn"
+		Global.critter = "res://Scenes/Player/Muntah.tscn"
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
 
 func _on_kaki_pressed() -> void:
 	if Global.score >= 4000:
-		Global.critter = "res://Scenes/Player/Babak.tscn"
+		Global.critter = "res://Scenes/Player/Kaki.tscn"
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
 
 func _on_start_focus_entered() -> void:
