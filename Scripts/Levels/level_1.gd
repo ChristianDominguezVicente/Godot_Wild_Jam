@@ -93,6 +93,8 @@ func main_level_logic():
 func start_level():
 	player_ready = false
 	score = 0
+	qte_arrows = 4
+	qte_time = 10.0
 	clear_all_obs()
 	
 	get_tree().paused = false
