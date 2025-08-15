@@ -120,7 +120,7 @@ func generate_obstacle():
 		var obs_y : int
 
 		if obs_type == wall_scene:
-			var random_wall_height = randf_range(0.5, 1.2)
+			var random_wall_height = randf_range(0.5, 1.0)
 			obs.get_node("Sprite2D").scale.y = random_wall_height
 			obs_scale = obs.get_node("Sprite2D").scale
 			obs_y = screen_size.y - ground_height - (obs_height * obs_scale.y / 2)
