@@ -24,6 +24,8 @@ func start_qte(num: int, time: float) -> void:
 	$AnimationPlayer.play("Start")
 	await $AnimationPlayer.animation_finished
 	
+	$Panel/TimeLabel.show()
+	
 	for child in hbox.get_children():
 		child.queue_free()
 

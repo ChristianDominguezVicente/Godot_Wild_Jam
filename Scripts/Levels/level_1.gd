@@ -45,6 +45,7 @@ var last_obstacle
 var qte_instance
 var qte_arrows : int = 4
 var qte_time : float = 10.0
+var last_qte_score : int = 0
 
 func _ready() -> void:
 	screen_size = Vector2i(1152, 648)
@@ -82,10 +83,12 @@ func main_level_logic():
 	if ($Camera2D.position.x - $Ground.position.x) > (screen_size.x * 1.5):     
 		$Ground.position.x += screen_size.x
 
-	score += speed         
-	$HudStart.update_score(score / SCORE_INCREASE_SPEED)
+	score += speed
+	var hud_score = int(score / SCORE_INCREASE_SPEED)
+	$HudStart.update_score(hud_score)
 	
-	if (score % 10000) == 0:
+	if hud_score >= last_qte_score + 1000:
+		last_qte_score = hud_score
 		start_qte()
  
 	clear_passed_obs()
