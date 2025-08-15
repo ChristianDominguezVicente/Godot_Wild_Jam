@@ -10,11 +10,6 @@ func _on_middle_area_body_entered(body: Node2D) -> void:
 		body.set_able_move(true, false)
 		print("LIMITE CENTRO DENTRO ")
 
-func _on_roof_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("critter"):
-		body.set_able_move(true, false)
-		print("LIMITE TECHO DENTRO ")
-
 func _on_left_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("critter"):
 		body.set_able_move(true, true)
@@ -25,7 +20,11 @@ func _on_middle_area_body_exited(body: Node2D) -> void:
 		body.set_able_move(true, true)
 		print("LIMITE CENTRO FUERA ")
 
+
+func _on_roof_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("critter"):
+		body.velocity.y = 0
+
 func _on_roof_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("critter"):
-		body.set_able_move(true, true)
-		print("LIMITE TECHO FUERA ")
+		body.velocity.y = 0

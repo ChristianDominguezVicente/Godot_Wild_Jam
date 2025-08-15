@@ -543,8 +543,9 @@ projectile = ExtResource("2_41rod")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
+frame = 1
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")
