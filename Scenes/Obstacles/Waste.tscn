@@ -61,9 +61,9 @@ script = ExtResource("1_j1dbc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(0.32, 0.32)
+position = Vector2(112, 48)
+scale = Vector2(0.360056, 0.4)
 texture = ExtResource("1_d1d4k")
-centered = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(113, 73)

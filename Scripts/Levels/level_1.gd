@@ -29,7 +29,7 @@ var consumables_scenes := [syringe_scene, uranium_scene, hearth_scene]
 const PLAYER_START_LOCATION := Vector2i(70, 485)
 const CAM_START_LOCATION := Vector2i(576, 324)
 
-const START_SPEED : float = 10.0
+const START_SPEED : float = 5.0
 const MAX_SPEED : float = 25.0
 const ACCELERATION : int = 2500
 const SCORE_INCREASE_SPEED : int = 10
@@ -132,7 +132,7 @@ func generate_obstacle():
 			obs_y = screen_size.y - ground_height - (obs_height * obs_scale.y / 2)
 
 		if obs_type == waste_scene:
-			obs_y = screen_size.y - ground_height - obs_height * obs_scale.y + 10
+			obs_y = screen_size.y - ground_height - obs_height * obs_scale.y + 42
 		else:
 			obs_y = screen_size.y - ground_height - (obs_height * obs_scale.y / 2)
 		
