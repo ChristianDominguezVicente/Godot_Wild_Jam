@@ -505,7 +505,7 @@ animation = &"idle"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_u1rob"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_pn48q"]
-graph_offset = Vector2(-432, 68)
+graph_offset = Vector2(-416.104, 39.8392)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_1y8qt")
 nodes/Animation/position = Vector2(-420, 120)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_u1rob")
@@ -607,8 +607,9 @@ projectile = ExtResource("2_yaesr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
+frame = 6
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")

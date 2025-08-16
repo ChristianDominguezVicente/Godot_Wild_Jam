@@ -12,6 +12,7 @@ var platform5_scene = preload("res://Scenes/Platforms/Platform5.tscn")
 
 var syringe_scene = preload("res://Scenes/Consumables/syringe.tscn")
 var uranium_scene = preload("res://Scenes/Consumables/uraniun_root.tscn")
+var hearth_scene = preload("res://Scenes/Consumables/hearth.tscn")
 
 ###########################################
 ## BORRAR HACER CON UN OBJETO CON HITBOX ##
@@ -23,7 +24,7 @@ var obstacles : Array
 
 var platforms_scenes := [platform1_scene, platform2_scene, platform3_scene, platform4_scene, platform5_scene]
 
-var consumables_scenes := [syringe_scene, uranium_scene]
+var consumables_scenes := [syringe_scene, uranium_scene, hearth_scene]
 
 const PLAYER_START_LOCATION := Vector2i(70, 485)
 const CAM_START_LOCATION := Vector2i(576, 324)
@@ -137,7 +138,7 @@ func generate_obstacle():
 		
 		add_obstacle(obs, obs_x, obs_y, true)
 		
-		if randf() < 0.5:
+		if randf() < 0.75:
 			var plat_type = platforms_scenes[randi() % platforms_scenes.size()]
 			var plat = plat_type.instantiate()
 			
