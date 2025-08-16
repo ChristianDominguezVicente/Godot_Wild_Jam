@@ -1,6 +1,6 @@
 [gd_scene load_steps=74 format=3 uid="uid://dyljuopox7r3t"]
 
-[ext_resource type="Script" uid="uid://1mpatiknbruu" path="res://Scripts/Player/Kaki.gd" id="1_jgdf8"]
+[ext_resource type="Script" uid="uid://m5vjnureuefc" path="res://Scripts/Player/Pukul.gd" id="1_jgdf8"]
 [ext_resource type="PackedScene" uid="uid://kxrlmc5mas6w" path="res://Scenes/Projectiles/Babak_Spit.tscn" id="2_545yq"]
 [ext_resource type="Texture2D" uid="uid://dglr6nipiawec" path="res://Assets/Spritesheets/Pukul-Jump.png" id="3_jgdf8"]
 [ext_resource type="Texture2D" uid="uid://jru8aavyt21b" path="res://Assets/Spritesheets/Pukul-Idle.png" id="4_545yq"]
@@ -523,9 +523,8 @@ projectile = ExtResource("2_545yq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
-animation = &"falling"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.126758
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")
