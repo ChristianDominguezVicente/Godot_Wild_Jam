@@ -29,6 +29,7 @@ point_count = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="UraniunRoot" type="Area2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_x7j55")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -54,6 +55,7 @@ initial_velocity_max = 100.0
 scale_amount_min = 20.0
 scale_amount_max = 25.0
 scale_amount_curve = SubResource("Curve_x7j55")
+color = Color(0.34902, 0.772549, 0.47451, 1)
 color_ramp = SubResource("Gradient_slglb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

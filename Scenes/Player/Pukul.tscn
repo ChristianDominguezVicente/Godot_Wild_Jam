@@ -523,7 +523,7 @@ projectile = ExtResource("2_545yq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
