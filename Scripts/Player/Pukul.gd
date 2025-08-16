@@ -89,10 +89,8 @@ func reduce_cadence(cadence_reduction_value : float):
 		if (DEFAULT_SHOOT_SPEED - cadence_reduction_value) > 0:
 			self.shoot_cadence = DEFAULT_SHOOT_SPEED - cadence_reduction_value
 			self.effect_states ^= 1
-	else:
-		print("NO STACKEO DISPARO")
 
-		shoot_cooldown.wait_time = self.shoot_cadence
+	shoot_cooldown.wait_time = self.shoot_cadence
 
 func reset_shoot_cadence():
 	self.shoot_cadence = DEFAULT_SHOOT_SPEED
@@ -103,8 +101,6 @@ func increase_movement_speed(movement_speed : float):
 	if not (effect_states & 2):
 		self.speed_multiplicator += movement_speed
 		self.effect_states ^= 2
-	else:
-		print("NO STACKEO")
 
 func reset_movement_speed():
 	self.effect_states ^= 2
