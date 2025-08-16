@@ -6,6 +6,8 @@ func update_score(score: int) -> void:
 
 func hide_ready_msg() -> void:
 	$ReadyLabel.hide()
+	$Panel.hide()
 	
 func show_ready_msg() -> void:
 	$ReadyLabel.show()
+	$Panel.show()

@@ -16,7 +16,7 @@ func _on_back_focus_entered() -> void:
 	$Back.z_index = 1
 	var tween = create_tween()
 	tween.set_parallel(true)
-
+	$ChangeSelection_AudioStreamPlayer.play()
 	tween.tween_property($Back, "rotation_degrees", -10, 0.2)\
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property($Back, "scale", Vector2(1.2, 1.2), 0.2)\
@@ -26,7 +26,7 @@ func _on_back_focus_exited() -> void:
 	$Back.z_index = 0
 	var tween = create_tween()
 	tween.set_parallel(true)
-
+	
 	tween.tween_property($Back, "rotation_degrees", 0, 0.2)\
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	tween.tween_property($Back, "scale", Vector2(1.0, 1.0), 0.2)\

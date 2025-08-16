@@ -62,6 +62,7 @@ func stop():
 	playing = false
 
 func _on_focus_entered() -> void:
+	get_node("/root/Menu/ChangeSelection_AudioStreamPlayer").play()
 	resume()
 
 func _on_focus_exited() -> void:

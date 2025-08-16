@@ -91,6 +91,7 @@ func reduce_cadence(cadence_reduction_value : float):
 			self.effect_states ^= 1
 
 	shoot_cooldown.wait_time = self.shoot_cadence
+	$Cure_AudioStreamPlayer.play()
 
 func reset_shoot_cadence():
 	self.shoot_cadence = DEFAULT_SHOOT_SPEED
@@ -103,6 +104,7 @@ func increase_movement_speed(movement_speed : float):
 		self.effect_states ^= 2
 	else:
 		print("NO STACKEO")
+	$Cure_AudioStreamPlayer.play()
 
 func reset_movement_speed():
 	self.effect_states ^= 2

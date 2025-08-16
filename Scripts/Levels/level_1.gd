@@ -188,7 +188,7 @@ func game_over():
 	
 	get_tree().paused = true
 	player_ready = false
-	$HudRestart/Panel/MainButtons/Restart.grab_focus()
+	$HudRestart/Panel/Restart.grab_focus()
 	$HudRestart.show()
 	
 func pause():

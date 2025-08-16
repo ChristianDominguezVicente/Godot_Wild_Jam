@@ -49,14 +49,14 @@ func _input(event) -> void:
 	if event.is_action_pressed("ui_accept"):
 		$Select_AudioStreamPlayer.play()
 	
-	if main_buttons.visible and \
-	(event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down")):
-		$ChangeSelection_AudioStreamPlayer.play()
+	#if main_buttons.visible and \
+	#(event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down")):
+		#$ChangeSelection_AudioStreamPlayer.play()
 		
-	if (settings.visible or selector.visible) and \
-	(event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down") \
-	or event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right")):
-		$ChangeSelection_AudioStreamPlayer.play()
+	#if (settings.visible or selector.visible) and \
+	#(event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down") \
+	#or event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right")):
+		#$ChangeSelection_AudioStreamPlayer.play()
 
 func _on_start_pressed() -> void:
 	main_buttons.visible = false
@@ -105,7 +105,7 @@ func _on_start_focus_entered() -> void:
 	$MainButtons/Start.z_index = 1
 	var tween = create_tween()
 	tween.set_parallel(true)
-
+	$ChangeSelection_AudioStreamPlayer.play()
 	tween.tween_property($MainButtons/Start, "rotation_degrees", 15, 0.2)\
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property($MainButtons/Start, "scale", Vector2(1.4, 1.4), 0.2)\
@@ -125,7 +125,7 @@ func _on_settings_focus_entered() -> void:
 	$MainButtons/Settings.z_index = 1
 	var tween = create_tween()
 	tween.set_parallel(true)
-
+	$ChangeSelection_AudioStreamPlayer.play()
 	tween.tween_property($MainButtons/Settings, "rotation_degrees", -5, 0.2)\
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property($MainButtons/Settings, "scale", Vector2(1.2, 1.2), 0.2)\
@@ -145,7 +145,7 @@ func _on_credits_focus_entered() -> void:
 	$MainButtons/Credits.z_index = 1
 	var tween = create_tween()
 	tween.set_parallel(true)
-
+	$ChangeSelection_AudioStreamPlayer.play()
 	tween.tween_property($MainButtons/Credits, "rotation_degrees", 20, 0.2)\
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property($MainButtons/Credits, "scale", Vector2(1.3, 1.3), 0.2)\
@@ -165,7 +165,7 @@ func _on_exit_focus_entered() -> void:
 	$MainButtons/Exit.z_index = 1
 	var tween = create_tween()
 	tween.set_parallel(true)
-
+	$ChangeSelection_AudioStreamPlayer.play()
 	tween.tween_property($MainButtons/Exit, "rotation_degrees", -10, 0.2)\
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property($MainButtons/Exit, "scale", Vector2(1.1, 1.1), 0.2)\
@@ -185,7 +185,7 @@ func _on_back_focus_entered() -> void:
 	$Selector/Back.z_index = 1
 	var tween = create_tween()
 	tween.set_parallel(true)
-
+	$ChangeSelection_AudioStreamPlayer.play()
 	tween.tween_property($Selector/Back, "rotation_degrees", -10, 0.2)\
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property($Selector/Back, "scale", Vector2(0.8, 0.8), 0.2)\
@@ -200,3 +200,27 @@ func _on_back_focus_exited() -> void:
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	tween.tween_property($Selector/Back, "scale", Vector2(0.6, 0.6), 0.2)\
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+
+func _on_back2_focus_entered() -> void:
+	$Settings/Back.z_index = 1
+	var tween = create_tween()
+	tween.set_parallel(true)
+	$ChangeSelection_AudioStreamPlayer.play()
+	tween.tween_property($Settings/Back, "rotation_degrees", -10, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property($Settings/Back, "scale", Vector2(1.1, 1.1), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+func _on_back2_focus_exited() -> void:
+	$Settings/Back.z_index = 0
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($Settings/Back, "rotation_degrees", 0, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tween.tween_property($Settings/Back, "scale", Vector2(1.0, 1.0), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+
+
+func _on_focus_entered() -> void:
+	$ChangeSelection_AudioStreamPlayer.play()

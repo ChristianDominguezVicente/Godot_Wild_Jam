@@ -1,89 +1,91 @@
-[gd_scene load_steps=15 format=3 uid="uid://bcsrf23rd6hep"]
+[gd_scene load_steps=17 format=3 uid="uid://bcsrf23rd6hep"]
 
-[ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="1_slwem"]
 [ext_resource type="Script" uid="uid://d4aoba4b84h4q" path="res://Scripts/HUDs/hud_restart.gd" id="1_tq6dx"]
+[ext_resource type="Texture2D" uid="uid://b6a8s8c80wjci" path="res://Assets/UI/TitleYouLost.png" id="2_3dlkj"]
 [ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="2_onlny"]
 [ext_resource type="AudioStream" uid="uid://befi63b07rxld" path="res://Audio/UIBackBabakBack.wav" id="4_3dlkj"]
+[ext_resource type="Texture2D" uid="uid://dicfuehjpb7ve" path="res://Assets/UI/RestartButton.png" id="4_y2a2b"]
+[ext_resource type="Texture2D" uid="uid://clox0knpr0k0d" path="res://Assets/UI/ExitButton.png" id="5_ebo2o"]
 [ext_resource type="AudioStream" uid="uid://dcb0hjlcluop" path="res://Audio/UIchangeSelection.wav" id="5_y2a2b"]
 [ext_resource type="AudioStream" uid="uid://sj5yqeyajwhj" path="res://Audio/UISelect.wav" id="6_ebo2o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq6dx"]
-bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s00uq"]
-bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkq4j"]
-bg_color = Color(0.14854, 0.234481, 0.266272, 1)
+bg_color = Color(0.14902, 0.235294, 0.266667, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dlkj"]
-bg_color = Color(0.2, 0.305882, 0.345098, 1)
+bg_color = Color(0.2, 0.305882, 0.345098, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2a2b"]
-bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ky44g"]
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebo2o"]
-bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omrx4"]
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jiaa6"]
-bg_color = Color(0.14854, 0.234481, 0.266272, 1)
+bg_color = Color(0.14902, 0.235294, 0.266667, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf6v8"]
-bg_color = Color(0.2, 0.305882, 0.345098, 1)
+bg_color = Color(0.2, 0.305882, 0.345098, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
@@ -98,34 +100,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainButtons" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -194.0
-offset_top = -122.0
-offset_right = 194.0
-offset_bottom = 122.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="Panel/MainButtons"]
+[node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 7
-theme_override_fonts/font = ExtResource("1_slwem")
-theme_override_font_sizes/font_size = 60
-text = "You Lost!"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 382.0
+offset_top = 185.0
+offset_right = 770.0
+offset_bottom = 274.538
+texture = ExtResource("2_3dlkj")
+expand_mode = 5
 
-[node name="Restart" type="Button" parent="Panel/MainButtons"]
+[node name="Restart" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 382.0
+offset_top = 301.0
+offset_right = 770.0
+offset_bottom = 368.0
+pivot_offset = Vector2(194, 33.5)
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -137,10 +127,17 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_tq6dx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_s00uq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gkq4j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3dlkj")
-text = "Restart"
+icon = ExtResource("4_y2a2b")
+icon_alignment = 1
+expand_icon = true
 
-[node name="Exit" type="Button" parent="Panel/MainButtons"]
+[node name="Exit" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 382.0
+offset_top = 378.0
+offset_right = 770.0
+offset_bottom = 446.0
+pivot_offset = Vector2(194, 34)
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -148,11 +145,13 @@ theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_onlny")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxFlat_y2a2b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ebo2o")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ky44g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_omrx4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jiaa6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lf6v8")
-text = "Exit"
+icon = ExtResource("5_ebo2o")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Back_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3dlkj")
@@ -166,5 +165,13 @@ bus = &"SFX"
 stream = ExtResource("6_ebo2o")
 bus = &"SFX"
 
-[connection signal="pressed" from="Panel/MainButtons/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Panel/MainButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="focus_entered" from="Panel/Restart" to="." method="_on_restart_focus_entered"]
+[connection signal="focus_exited" from="Panel/Restart" to="." method="_on_restart_focus_exited"]
+[connection signal="mouse_entered" from="Panel/Restart" to="." method="_on_restart_focus_entered"]
+[connection signal="mouse_exited" from="Panel/Restart" to="." method="_on_restart_focus_exited"]
+[connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]
+[connection signal="focus_entered" from="Panel/Exit" to="." method="_on_exit_focus_entered"]
+[connection signal="focus_exited" from="Panel/Exit" to="." method="_on_exit_focus_exited"]
+[connection signal="mouse_entered" from="Panel/Exit" to="." method="_on_exit_focus_entered"]
+[connection signal="mouse_exited" from="Panel/Exit" to="." method="_on_exit_focus_exited"]
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]

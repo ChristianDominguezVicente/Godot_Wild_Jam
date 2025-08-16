@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqd7112x5one2"]
+[gd_scene load_steps=13 format=3 uid="uid://dqd7112x5one2"]
 
 [ext_resource type="Script" uid="uid://bjdag0oh4b0x2" path="res://Scripts/Credits/Credits.gd" id="1_jq1kv"]
 [ext_resource type="Texture2D" uid="uid://c1aas0436cb70" path="res://Assets/UI/Credits.png" id="2_l755l"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bjnmtwnsctp0p" path="res://Audio/BabakMenu.wav" id="4_qqh6l"]
 [ext_resource type="Texture2D" uid="uid://ya2kxkvoefyx" path="res://Assets/UI/CreditsBack.png" id="4_thk3a"]
 [ext_resource type="AudioStream" uid="uid://befi63b07rxld" path="res://Audio/UIBackBabakBack.wav" id="5_jdyel"]
+[ext_resource type="AudioStream" uid="uid://dcb0hjlcluop" path="res://Audio/UIchangeSelection.wav" id="7_thk3a"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kulhe"]
 
@@ -100,6 +101,10 @@ bus = &"Music"
 
 [node name="Back_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_jdyel")
+bus = &"SFX"
+
+[node name="ChangeSelection_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_thk3a")
 bus = &"SFX"
 
 [connection signal="focus_entered" from="Back" to="." method="_on_back_focus_entered"]

@@ -1,100 +1,102 @@
-[gd_scene load_steps=24 format=3 uid="uid://bkscv41bijeth"]
+[gd_scene load_steps=30 format=3 uid="uid://bkscv41bijeth"]
 
 [ext_resource type="Script" uid="uid://bm0jx2vrjul1b" path="res://Scripts/HUDs/hud_pause.gd" id="1_gvpy6"]
-[ext_resource type="FontFile" uid="uid://ced1dym32twdr" path="res://Assets/Fonts/JollyLodger-Regular.ttf" id="2_l73jb"]
+[ext_resource type="Texture2D" uid="uid://ddl0gjp2o7mdp" path="res://Assets/UI/TitlePause.png" id="2_ah1od"]
 [ext_resource type="FontFile" uid="uid://do21nqo4k7sv4" path="res://Assets/Fonts/AnnieUseYourTelescope-Regular.ttf" id="3_ujhjy"]
+[ext_resource type="Texture2D" uid="uid://bkbbf16jaec4e" path="res://Assets/UI/ResumeButton.png" id="4_s10ir"]
 [ext_resource type="Script" uid="uid://bs1mqdv6q5s5s" path="res://Scripts/Menu/AudioControl.gd" id="4_ujhjy"]
+[ext_resource type="Texture2D" uid="uid://dicfuehjpb7ve" path="res://Assets/UI/RestartButton.png" id="5_7u4nu"]
 [ext_resource type="Script" uid="uid://bht0rgxfwih1u" path="res://Scripts/Menu/FullScreenControl.gd" id="5_hr3g3"]
 [ext_resource type="AudioStream" uid="uid://befi63b07rxld" path="res://Audio/UIBackBabakBack.wav" id="6_dl88k"]
+[ext_resource type="Texture2D" uid="uid://5103wooqpnxr" path="res://Assets/UI/SettingsButton.png" id="6_ohbuc"]
 [ext_resource type="AudioStream" uid="uid://dcb0hjlcluop" path="res://Audio/UIchangeSelection.wav" id="7_ah1od"]
+[ext_resource type="Texture2D" uid="uid://clox0knpr0k0d" path="res://Assets/UI/ExitButton.png" id="7_fkwbl"]
+[ext_resource type="Texture2D" uid="uid://bclgm07ick3i1" path="res://Assets/UI/SettingsUI.png" id="8_7u4nu"]
 [ext_resource type="AudioStream" uid="uid://sj5yqeyajwhj" path="res://Audio/UISelect.wav" id="8_lh5a6"]
+[ext_resource type="Texture2D" uid="uid://ya2kxkvoefyx" path="res://Assets/UI/CreditsBack.png" id="12_ohbuc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq6dx"]
-bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s00uq"]
-bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkq4j"]
-bg_color = Color(0.14854, 0.234481, 0.266272, 1)
+bg_color = Color(0.14902, 0.235294, 0.266667, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dlkj"]
-bg_color = Color(0.2, 0.305882, 0.345098, 1)
+bg_color = Color(0.2, 0.305882, 0.345098, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2a2b"]
-bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebo2o"]
-bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jiaa6"]
-bg_color = Color(0.14854, 0.234481, 0.266272, 1)
+bg_color = Color(0.14902, 0.235294, 0.266667, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf6v8"]
-bg_color = Color(0.2, 0.305882, 0.345098, 1)
+bg_color = Color(0.2, 0.305882, 0.345098, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxwn7"]
-bg_color = Color(0.217098, 0.222122, 0.244837, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ohbuc"]
+texture = ExtResource("8_7u4nu")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_dl88k"]
 color = Color(0.419608, 0.427451, 0.462745, 1)
@@ -108,33 +110,33 @@ thickness = 5
 color = Color(0.988235, 0.74902, 0.717647, 1)
 thickness = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fatfd"]
-bg_color = Color(0.14854, 0.234481, 0.266272, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkwbl"]
+bg_color = Color(0.14902, 0.235294, 0.266667, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv8ao"]
-bg_color = Color(0.170347, 0.264899, 0.299892, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3xbe"]
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s10ir"]
-bg_color = Color(0.2, 0.305882, 0.345098, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vx0uf"]
+bg_color = Color(0.2, 0.305882, 0.345098, 0)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.203922)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
@@ -149,35 +151,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainButtons" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -194.0
-offset_top = -173.0
-offset_right = 194.0
-offset_bottom = 173.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="Panel/MainButtons"]
+[node name="MainButtons" type="Panel" parent="Panel"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 7
-theme_override_fonts/font = ExtResource("2_l73jb")
-theme_override_font_sizes/font_size = 60
-text = "Pause"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 382.0
+offset_top = 151.0
+offset_right = 770.0
+offset_bottom = 151.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MainButtons"]
+layout_mode = 2
+offset_top = -9.0
+offset_right = 388.0
+offset_bottom = 80.5385
+texture = ExtResource("2_ah1od")
+expand_mode = 5
 
 [node name="Resume" type="Button" parent="Panel/MainButtons"]
 layout_mode = 2
+offset_top = 99.0
+offset_right = 388.0
+offset_bottom = 157.0
+pivot_offset = Vector2(194, 29)
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Restart")
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
@@ -188,11 +185,19 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_tq6dx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_s00uq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gkq4j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3dlkj")
-text = "Resume"
+icon = ExtResource("4_s10ir")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Restart" type="Button" parent="Panel/MainButtons"]
 layout_mode = 2
+offset_top = 167.0
+offset_right = 388.0
+offset_bottom = 225.0
+pivot_offset = Vector2(194, 29)
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Settings")
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
@@ -203,11 +208,19 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_tq6dx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_s00uq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gkq4j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3dlkj")
-text = "Restart"
+icon = ExtResource("5_7u4nu")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Settings" type="Button" parent="Panel/MainButtons"]
 layout_mode = 2
+offset_top = 235.0
+offset_right = 388.0
+offset_bottom = 293.0
+pivot_offset = Vector2(194, 29)
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Restart")
+focus_neighbor_bottom = NodePath("../Exit")
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
@@ -218,11 +231,19 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_tq6dx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_s00uq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gkq4j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3dlkj")
-text = "Settings"
+icon = ExtResource("6_ohbuc")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Exit" type="Button" parent="Panel/MainButtons"]
 layout_mode = 2
+offset_top = 303.0
+offset_right = 388.0
+offset_bottom = 361.0
+pivot_offset = Vector2(194, 29)
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Resume")
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
@@ -233,7 +254,9 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_y2a2b")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ebo2o")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jiaa6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lf6v8")
-text = "Exit"
+icon = ExtResource("7_fkwbl")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Settings" type="Panel" parent="Panel"]
 visible = false
@@ -249,25 +272,7 @@ offset_right = 259.0
 offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pxwn7")
-
-[node name="Label" type="Label" parent="Panel/Settings"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -257.5
-offset_right = 258.5
-offset_bottom = 81.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.988235, 0.74902, 0.717647, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("2_l73jb")
-theme_override_font_sizes/font_size = 50
-text = "Settings"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_ohbuc")
 
 [node name="SettingsContainer" type="VBoxContainer" parent="Panel/Settings"]
 layout_mode = 1
@@ -290,14 +295,18 @@ theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="Panel/Settings/SettingsContainer/Music"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_ujhjy")
 theme_override_font_sizes/font_size = 20
-text = "Music Volume"
+text = " Music Volume"
 
 [node name="AudioControl" type="HSlider" parent="Panel/Settings/SettingsContainer/Music"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../../Back")
+focus_neighbor_bottom = NodePath("../../SFX/AudioControl")
 theme_override_styles/slider = SubResource("StyleBoxLine_dl88k")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_ah1od")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_lh5a6")
@@ -313,14 +322,18 @@ theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="Panel/Settings/SettingsContainer/SFX"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_ujhjy")
 theme_override_font_sizes/font_size = 20
-text = "SFX Volume "
+text = " SFX Volume "
 
 [node name="AudioControl" type="HSlider" parent="Panel/Settings/SettingsContainer/SFX"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../Music/AudioControl")
+focus_neighbor_bottom = NodePath("../../Screen/FullScreenControl")
 theme_override_styles/slider = SubResource("StyleBoxLine_dl88k")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_ah1od")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_lh5a6")
@@ -330,27 +343,50 @@ value = 1.0
 script = ExtResource("4_ujhjy")
 audio_bus_name = "SFX"
 
-[node name="FullScreenControl" type="CheckButton" parent="Panel/Settings/SettingsContainer"]
+[node name="Screen" type="HBoxContainer" parent="Panel/Settings/SettingsContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/Settings/SettingsContainer/Screen"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_ujhjy")
 theme_override_font_sizes/font_size = 20
-text = "FullScreen"
+text = " FullScreen"
+
+[node name="FullScreenControl" type="CheckButton" parent="Panel/Settings/SettingsContainer/Screen"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../SFX/AudioControl")
+focus_neighbor_bottom = NodePath("../../../Back")
+theme_override_fonts/font = ExtResource("3_ujhjy")
+theme_override_font_sizes/font_size = 20
+text = "                                  "
 script = ExtResource("5_hr3g3")
 
-[node name="Back" type="Button" parent="Panel/Settings/SettingsContainer"]
-layout_mode = 2
+[node name="Back" type="Button" parent="Panel/Settings"]
+layout_mode = 0
+offset_left = 259.5
+offset_top = 239.5
+offset_right = 647.5
+offset_bottom = 342.5
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(194, 51.5)
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../SettingsContainer/Screen/FullScreenControl")
+focus_neighbor_bottom = NodePath("../SettingsContainer/Music/AudioControl")
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_ujhjy")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxFlat_fatfd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cv8ao")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_fatfd")
-theme_override_styles/normal = SubResource("StyleBoxFlat_s10ir")
-text = "Back"
+theme_override_styles/focus = SubResource("StyleBoxFlat_fkwbl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o3xbe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fkwbl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vx0uf")
+icon = ExtResource("12_ohbuc")
+icon_alignment = 1
 
 [node name="Back_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_dl88k")
@@ -364,11 +400,37 @@ bus = &"SFX"
 stream = ExtResource("8_lh5a6")
 bus = &"SFX"
 
+[connection signal="focus_entered" from="Panel/MainButtons/Resume" to="." method="_on_resume_focus_entered"]
+[connection signal="focus_exited" from="Panel/MainButtons/Resume" to="." method="_on_resume_focus_exited"]
+[connection signal="mouse_entered" from="Panel/MainButtons/Resume" to="." method="_on_resume_focus_entered"]
+[connection signal="mouse_exited" from="Panel/MainButtons/Resume" to="." method="_on_resume_focus_exited"]
 [connection signal="pressed" from="Panel/MainButtons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="focus_entered" from="Panel/MainButtons/Restart" to="." method="_on_restart_focus_entered"]
+[connection signal="focus_exited" from="Panel/MainButtons/Restart" to="." method="_on_restart_focus_exited"]
+[connection signal="mouse_entered" from="Panel/MainButtons/Restart" to="." method="_on_restart_focus_entered"]
+[connection signal="mouse_exited" from="Panel/MainButtons/Restart" to="." method="_on_restart_focus_exited"]
 [connection signal="pressed" from="Panel/MainButtons/Restart" to="." method="_on_restart_pressed"]
+[connection signal="focus_entered" from="Panel/MainButtons/Settings" to="." method="_on_settings_focus_entered"]
+[connection signal="focus_exited" from="Panel/MainButtons/Settings" to="." method="_on_settings_focus_exited"]
+[connection signal="mouse_entered" from="Panel/MainButtons/Settings" to="." method="_on_settings_focus_entered"]
+[connection signal="mouse_exited" from="Panel/MainButtons/Settings" to="." method="_on_settings_focus_exited"]
 [connection signal="pressed" from="Panel/MainButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="focus_entered" from="Panel/MainButtons/Exit" to="." method="_on_exit_focus_entered"]
+[connection signal="focus_exited" from="Panel/MainButtons/Exit" to="." method="_on_exit_focus_exited"]
+[connection signal="mouse_entered" from="Panel/MainButtons/Exit" to="." method="_on_exit_focus_entered"]
+[connection signal="mouse_exited" from="Panel/MainButtons/Exit" to="." method="_on_exit_focus_exited"]
 [connection signal="pressed" from="Panel/MainButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="focus_entered" from="Panel/Settings/SettingsContainer/Music/AudioControl" to="." method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Panel/Settings/SettingsContainer/Music/AudioControl" to="." method="_on_focus_entered"]
 [connection signal="value_changed" from="Panel/Settings/SettingsContainer/Music/AudioControl" to="Panel/Settings/SettingsContainer/Music/AudioControl" method="_on_value_changed"]
+[connection signal="focus_entered" from="Panel/Settings/SettingsContainer/SFX/AudioControl" to="." method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Panel/Settings/SettingsContainer/SFX/AudioControl" to="." method="_on_focus_entered"]
 [connection signal="value_changed" from="Panel/Settings/SettingsContainer/SFX/AudioControl" to="Panel/Settings/SettingsContainer/SFX/AudioControl" method="_on_value_changed"]
-[connection signal="toggled" from="Panel/Settings/SettingsContainer/FullScreenControl" to="Panel/Settings/SettingsContainer/FullScreenControl" method="_on_toggled"]
-[connection signal="pressed" from="Panel/Settings/SettingsContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="focus_entered" from="Panel/Settings/SettingsContainer/Screen/FullScreenControl" to="." method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Panel/Settings/SettingsContainer/Screen/FullScreenControl" to="." method="_on_focus_entered"]
+[connection signal="toggled" from="Panel/Settings/SettingsContainer/Screen/FullScreenControl" to="Panel/Settings/SettingsContainer/Screen/FullScreenControl" method="_on_toggled"]
+[connection signal="focus_entered" from="Panel/Settings/Back" to="." method="_on_back_focus_entered"]
+[connection signal="focus_exited" from="Panel/Settings/Back" to="." method="_on_back_focus_exited"]
+[connection signal="mouse_entered" from="Panel/Settings/Back" to="." method="_on_back_focus_entered"]
+[connection signal="mouse_exited" from="Panel/Settings/Back" to="." method="_on_back_focus_exited"]
+[connection signal="pressed" from="Panel/Settings/Back" to="." method="_on_back_pressed"]
