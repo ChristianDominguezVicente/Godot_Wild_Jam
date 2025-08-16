@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://be4fw0n1asc64" path="res://Scripts/Player/Gerakan.gd" id="1_s5wbo"]
 [ext_resource type="Texture2D" uid="uid://dk0d1jpv3un74" path="res://Assets/Spritesheets/Gerakan-jump.png" id="2_s5wbo"]
-[ext_resource type="PackedScene" uid="uid://kxrlmc5mas6w" path="res://Scenes/Projectiles/Babak_Spit.tscn" id="2_yaesr"]
+[ext_resource type="PackedScene" uid="uid://c3j5iix1tcpqk" path="res://Scenes/Projectiles/Gerakan_spit.tscn" id="2_yaesr"]
 [ext_resource type="Texture2D" uid="uid://e062m78mfdb6" path="res://Assets/Spritesheets/Gerakan-idle.png" id="3_s5wbo"]
 [ext_resource type="Texture2D" uid="uid://08iikuyjooir" path="res://Assets/Spritesheets/Gerakan-walk.png" id="4_yaesr"]
 [ext_resource type="Script" uid="uid://bwy3n7obj1i6g" path="res://Scripts/Player/health_container.gd" id="6_25aeq"]
@@ -609,7 +609,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
 animation = &"idle"
 autoplay = "idle"
-frame = 6
+frame = 3
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")

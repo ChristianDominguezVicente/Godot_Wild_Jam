@@ -1,9 +1,9 @@
-class_name BabakSpit
+class_name GerakanSpit
 extends CharacterBody2D
 
 @export var speed : int = 400
 @export var constant_speed : int = 1200
-@export var damage : int = 2
+@export var damage : int = 1
 
 var target_position
 var despawn_time : int = 2

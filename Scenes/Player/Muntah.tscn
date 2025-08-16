@@ -1,7 +1,7 @@
 [gd_scene load_steps=74 format=3 uid="uid://c6bhvnsdet6m4"]
 
 [ext_resource type="Script" uid="uid://dcatryxubn1fn" path="res://Scripts/Player/Muntah.gd" id="1_ghi4v"]
-[ext_resource type="PackedScene" uid="uid://kxrlmc5mas6w" path="res://Scenes/Projectiles/Babak_Spit.tscn" id="2_ijytv"]
+[ext_resource type="PackedScene" uid="uid://4b2vsjh5oekq" path="res://Scenes/Projectiles/Muntah_spit.tscn" id="2_ghi4v"]
 [ext_resource type="Texture2D" uid="uid://ban5ks7u8qsxr" path="res://Assets/Spritesheets/Muntah-jump.png" id="3_ghi4v"]
 [ext_resource type="Texture2D" uid="uid://bfihls1xuy471" path="res://Assets/Spritesheets/Muntah-idle.png" id="4_ijytv"]
 [ext_resource type="Texture2D" uid="uid://diau8qvts0oml" path="res://Assets/Spritesheets/Muntah-walk.png" id="5_va7wf"]
@@ -518,13 +518,14 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 z_index = 1
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_ghi4v")
-projectile = ExtResource("2_ijytv")
+projectile = ExtResource("2_ghi4v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
 animation = &"idle"
 autoplay = "idle"
+frame = 3
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")
