@@ -2,7 +2,7 @@ class_name Kaki
 extends CharacterBody2D
 
 const GRAVITY : int = 4200
-const JUMP_SPEED : int = -2500
+const JUMP_SPEED : int = -2000
 const MAX_HEALTH : int = 3
 const DEFAULT_SHOOT_SPEED : float = 0.5
 const DEFAULT_SPEED_MULTIPLICATOR_MOVEMENT : int = 15
