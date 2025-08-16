@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://cu0mpxcur7ieu"]
+[gd_scene load_steps=122 format=3 uid="uid://cu0mpxcur7ieu"]
 
 [ext_resource type="Script" uid="uid://df8bk3e8eqxm3" path="res://Scripts/Menu/Menu.gd" id="1_1kgdg"]
 [ext_resource type="Script" uid="uid://bs1mqdv6q5s5s" path="res://Scripts/Menu/AudioControl.gd" id="2_3kh17"]
@@ -17,30 +17,42 @@
 [ext_resource type="AudioStream" uid="uid://dcb0hjlcluop" path="res://Audio/UIchangeSelection.wav" id="8_c61og"]
 [ext_resource type="AudioStream" uid="uid://sj5yqeyajwhj" path="res://Audio/UISelect.wav" id="9_kqh14"]
 [ext_resource type="Texture2D" uid="uid://clox0knpr0k0d" path="res://Assets/UI/ExitButton.png" id="9_ofv6h"]
+[ext_resource type="Texture2D" uid="uid://crhxk6x8dx1xm" path="res://Assets/UI/CritterSelector/SelectorBG.png" id="16_ud00n"]
 [ext_resource type="Texture2D" uid="uid://cchecemyq1uel" path="res://Assets/Spritesheets/Kaki-walk.png" id="17_i80xk"]
+[ext_resource type="Texture2D" uid="uid://gkn501lhg733" path="res://Assets/UI/CritterSelector/Babak_Selected.png" id="17_r7rut"]
 [ext_resource type="Texture2D" uid="uid://dpqhkg1el2fsn" path="res://Assets/Spritesheets/Kaki-icon.png" id="18_o0fcc"]
+[ext_resource type="Texture2D" uid="uid://b3mn7gyy5r6as" path="res://Assets/UI/CritterSelector/Babak_NotSelected.png" id="18_syjb5"]
 [ext_resource type="Texture2D" uid="uid://cf00k26ntrspf" path="res://Assets/Spritesheets/Pukul-icon.png" id="18_y54ir"]
 [ext_resource type="Texture2D" uid="uid://s7hnivnu3na7" path="res://Assets/Spritesheets/Pukul-Walk.png" id="19_0p4q6"]
 [ext_resource type="Texture2D" uid="uid://bsvavkjrc1066" path="res://Assets/Spritesheets/Gerakan-icon.png" id="20_g5cqd"]
 [ext_resource type="Texture2D" uid="uid://08iikuyjooir" path="res://Assets/Spritesheets/Gerakan-walk.png" id="20_ofv6h"]
+[ext_resource type="Texture2D" uid="uid://d1mx6sy8oynba" path="res://Assets/UI/CritterSelector/Pukul_Selected.png" id="21_syjb5"]
 [ext_resource type="Texture2D" uid="uid://d2cne3s63dpob" path="res://Assets/Spritesheets/Muntah-icon.png" id="22_0p4q6"]
+[ext_resource type="Texture2D" uid="uid://bvw7uqhuhqbk2" path="res://Assets/UI/CritterSelector/Pukul_NotSelected.png" id="22_4mfcn"]
 [ext_resource type="Texture2D" uid="uid://diau8qvts0oml" path="res://Assets/Spritesheets/Muntah-walk.png" id="22_md428"]
+[ext_resource type="Texture2D" uid="uid://cmt8te4ycoup3" path="res://Assets/UI/CritterSelector/Gerakan_Selected.png" id="25_o3tf8"]
+[ext_resource type="Texture2D" uid="uid://e4iqdgehhsu6" path="res://Assets/UI/CritterSelector/Gerakan_NotSelected.png" id="26_0nmat"]
+[ext_resource type="Texture2D" uid="uid://bsw3bjl3xb7kr" path="res://Assets/UI/CritterSelector/Muntah_Selected.png" id="29_0d25f"]
+[ext_resource type="Texture2D" uid="uid://djd5d8mqwcqek" path="res://Assets/UI/CritterSelector/Muntah_NotSelected.png" id="30_u174r"]
+[ext_resource type="Texture2D" uid="uid://dqatmte00s6q2" path="res://Assets/UI/CritterSelector/Kaki_Selected.png" id="33_0d25f"]
+[ext_resource type="Texture2D" uid="uid://cq6xu277x0e2s" path="res://Assets/UI/CritterSelector/Kaki_NotSelected.png" id="34_u174r"]
+[ext_resource type="Texture2D" uid="uid://ya2kxkvoefyx" path="res://Assets/UI/CreditsBack.png" id="37_u174r"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1upnj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5cqd"]
 atlas = ExtResource("3_ac4b6")
-region = Rect2(1152, 0, 1152, 648)
+region = Rect2(1152, 648, 1152, 648)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0fcc"]
 atlas = ExtResource("3_ac4b6")
 region = Rect2(0, 0, 1152, 648)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1upnj"]
+atlas = ExtResource("3_ac4b6")
+region = Rect2(1152, 0, 1152, 648)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofv6h"]
 atlas = ExtResource("3_ac4b6")
 region = Rect2(0, 648, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g5cqd"]
-atlas = ExtResource("3_ac4b6")
-region = Rect2(1152, 648, 1152, 648)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q10mx"]
 animations = [{
@@ -280,6 +292,21 @@ shadow_color = Color(0, 0, 0, 0.203922)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mfcn"]
+texture = ExtResource("16_ud00n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ke20"]
+texture = ExtResource("17_r7rut")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxvy5"]
+texture = ExtResource("17_r7rut")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3tf8"]
+texture = ExtResource("17_r7rut")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0nmat"]
+texture = ExtResource("18_syjb5")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_q10mx"]
 atlas = ExtResource("8_ac4b6")
 region = Rect2(0, 0, 32, 32)
@@ -344,6 +371,18 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0d25f"]
+texture = ExtResource("21_syjb5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u174r"]
+texture = ExtResource("21_syjb5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_50xb4"]
+texture = ExtResource("21_syjb5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktrx3"]
+texture = ExtResource("22_4mfcn")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_g3vth"]
 atlas = ExtResource("19_0p4q6")
 region = Rect2(0, 0, 48, 32)
@@ -379,6 +418,18 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ilusx"]
+texture = ExtResource("25_o3tf8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62bvu"]
+texture = ExtResource("25_o3tf8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0v7tn"]
+texture = ExtResource("25_o3tf8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3aggm"]
+texture = ExtResource("26_0nmat")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ke20"]
 atlas = ExtResource("20_ofv6h")
@@ -416,6 +467,18 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16tba"]
+texture = ExtResource("29_0d25f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_74swj"]
+texture = ExtResource("29_0d25f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aafw7"]
+texture = ExtResource("29_0d25f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hb2vp"]
+texture = ExtResource("30_u174r")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_16tba"]
 atlas = ExtResource("22_md428")
 region = Rect2(0, 0, 32, 32)
@@ -451,6 +514,18 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2j7na"]
+texture = ExtResource("33_0d25f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hax1n"]
+texture = ExtResource("33_0d25f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xoro5"]
+texture = ExtResource("33_0d25f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_keill"]
+texture = ExtResource("34_u174r")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_syjb5"]
 atlas = ExtResource("17_i80xk")
@@ -488,6 +563,36 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50xb4"]
+bg_color = Color(0.14902, 0.235294, 0.266667, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktrx3"]
+bg_color = Color(0.168627, 0.266667, 0.298039, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilusx"]
+bg_color = Color(0.2, 0.305882, 0.345098, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -504,10 +609,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_1upnj")
+texture = SubResource("AtlasTexture_g5cqd")
 script = ExtResource("6_h7084")
 sprites = SubResource("SpriteFrames_q10mx")
-frame_index = 1
+frame_index = 3
 auto_play = true
 playing = true
 
@@ -830,9 +935,10 @@ offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
-theme_override_styles/panel = SubResource("StyleBoxFlat_kulhe")
+theme_override_styles/panel = SubResource("StyleBoxTexture_4mfcn")
 
 [node name="Label" type="Label" parent="Selector"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -870,10 +976,10 @@ focus_neighbor_left = NodePath("../Kaki")
 focus_neighbor_top = NodePath("../../Back")
 focus_neighbor_right = NodePath("../Pukul")
 focus_neighbor_bottom = NodePath("../../Back")
-theme_override_styles/focus = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
+theme_override_styles/focus = SubResource("StyleBoxTexture_8ke20")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kxvy5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o3tf8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0nmat")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Selector/HBoxContainer/Babak"]
 layout_mode = 1
@@ -895,11 +1001,12 @@ sprites = SubResource("SpriteFrames_1upnj")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 30
-text = "Babak"
 horizontal_alignment = 1
 
 [node name="Stats" type="Label" parent="Selector/HBoxContainer/Babak/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 28
 text = "Spd: II Dmg: II Jump: II"
@@ -912,10 +1019,10 @@ focus_neighbor_left = NodePath("../Babak")
 focus_neighbor_top = NodePath("../../Back")
 focus_neighbor_right = NodePath("../Gerakan")
 focus_neighbor_bottom = NodePath("../../Back")
-theme_override_styles/focus = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0d25f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u174r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_50xb4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ktrx3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Selector/HBoxContainer/Pukul"]
 layout_mode = 1
@@ -937,11 +1044,12 @@ sprites = SubResource("SpriteFrames_ofv6h")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 30
-text = "Pukul"
 horizontal_alignment = 1
 
 [node name="Stats" type="Label" parent="Selector/HBoxContainer/Pukul/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 28
 text = "Spd: I Dmg: III Jump: II"
@@ -954,10 +1062,10 @@ focus_neighbor_left = NodePath("../Pukul")
 focus_neighbor_top = NodePath("../../Back")
 focus_neighbor_right = NodePath("../Muntah")
 focus_neighbor_bottom = NodePath("../../Back")
-theme_override_styles/focus = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ilusx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_62bvu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0v7tn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3aggm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Selector/HBoxContainer/Gerakan"]
 layout_mode = 1
@@ -979,11 +1087,12 @@ sprites = SubResource("SpriteFrames_md428")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 30
-text = "Gerakan"
 horizontal_alignment = 1
 
 [node name="Stats" type="Label" parent="Selector/HBoxContainer/Gerakan/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 28
 text = "Spd: III Dmg: I Jump: II"
@@ -996,10 +1105,10 @@ focus_neighbor_left = NodePath("../Gerakan")
 focus_neighbor_top = NodePath("../../Back")
 focus_neighbor_right = NodePath("../Kaki")
 focus_neighbor_bottom = NodePath("../../Back")
-theme_override_styles/focus = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
+theme_override_styles/focus = SubResource("StyleBoxTexture_16tba")
+theme_override_styles/hover = SubResource("StyleBoxTexture_74swj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_aafw7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hb2vp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Selector/HBoxContainer/Muntah"]
 layout_mode = 1
@@ -1021,11 +1130,12 @@ sprites = SubResource("SpriteFrames_y54ir")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 30
-text = "Muntah"
 horizontal_alignment = 1
 
 [node name="Stats" type="Label" parent="Selector/HBoxContainer/Muntah/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 28
 text = "Spd: II Dmg: III Jump: I"
@@ -1038,10 +1148,10 @@ focus_neighbor_left = NodePath("../Muntah")
 focus_neighbor_top = NodePath("../../Back")
 focus_neighbor_right = NodePath("../Babak")
 focus_neighbor_bottom = NodePath("../../Back")
-theme_override_styles/focus = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
+theme_override_styles/focus = SubResource("StyleBoxTexture_2j7na")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hax1n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xoro5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_keill")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Selector/HBoxContainer/Kaki"]
 layout_mode = 1
@@ -1063,36 +1173,45 @@ sprites = SubResource("SpriteFrames_lkkwq")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 30
-text = "Kaki"
 horizontal_alignment = 1
 
 [node name="Stats" type="Label" parent="Selector/HBoxContainer/Kaki/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 28
 text = "Spd: II Dmg: I Jump: III"
 horizontal_alignment = 1
 
 [node name="Back" type="Button" parent="Selector"]
-layout_mode = 2
-offset_left = 359.5
-offset_top = 343.0
-offset_right = 747.5
-offset_bottom = 401.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -103.285
+offset_top = -97.2857
+offset_right = 5.71472
+offset_bottom = 5.71429
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(54.5, 51.5)
 size_flags_vertical = 3
-focus_neighbor_top = NodePath("../HBoxContainer/Gerakan")
-focus_neighbor_bottom = NodePath("../HBoxContainer/Gerakan")
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_kulhe")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1kgdg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3kh17")
-theme_override_styles/normal = SubResource("StyleBoxFlat_y5kka")
-text = "Back"
+theme_override_styles/focus = SubResource("StyleBoxFlat_50xb4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktrx3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_50xb4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ilusx")
+icon = ExtResource("37_u174r")
+icon_alignment = 1
 
 [connection signal="focus_entered" from="MainButtons/Start" to="." method="_on_start_focus_entered"]
 [connection signal="focus_exited" from="MainButtons/Start" to="." method="_on_start_focus_exited"]
@@ -1143,4 +1262,8 @@ text = "Back"
 [connection signal="mouse_entered" from="Selector/HBoxContainer/Kaki" to="Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect" method="_on_focus_entered"]
 [connection signal="mouse_exited" from="Selector/HBoxContainer/Kaki" to="Selector/HBoxContainer/Kaki/VBoxContainer/TextureRect" method="_on_focus_exited"]
 [connection signal="pressed" from="Selector/HBoxContainer/Kaki" to="." method="_on_kaki_pressed"]
+[connection signal="focus_entered" from="Selector/Back" to="." method="_on_back_focus_entered"]
+[connection signal="focus_exited" from="Selector/Back" to="." method="_on_back_focus_exited"]
+[connection signal="mouse_entered" from="Selector/Back" to="." method="_on_back_focus_entered"]
+[connection signal="mouse_exited" from="Selector/Back" to="." method="_on_back_focus_exited"]
 [connection signal="pressed" from="Selector/Back" to="." method="_on_back_settings_pressed"]

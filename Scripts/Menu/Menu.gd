@@ -180,3 +180,23 @@ func _on_exit_focus_exited() -> void:
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	tween.tween_property($MainButtons/Exit, "scale", Vector2(1.0, 1.0), 0.2)\
 	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	
+func _on_back_focus_entered() -> void:
+	$Selector/Back.z_index = 1
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($Selector/Back, "rotation_degrees", -10, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property($Selector/Back, "scale", Vector2(0.8, 0.8), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+func _on_back_focus_exited() -> void:
+	$Selector/Back.z_index = 0
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property($Selector/Back, "rotation_degrees", 0, 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tween.tween_property($Selector/Back, "scale", Vector2(0.6, 0.6), 0.2)\
+	.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
