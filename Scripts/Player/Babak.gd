@@ -89,10 +89,8 @@ func reduce_cadence(cadence_reduction_value : float):
 		if (DEFAULT_SHOOT_SPEED - cadence_reduction_value) > 0:
 			self.shoot_cadence = DEFAULT_SHOOT_SPEED - cadence_reduction_value
 			self.effect_states ^= 1
-	else:
-		print("NO STACKEO DISPARO")
 
-		shoot_cooldown.wait_time = self.shoot_cadence
+	shoot_cooldown.wait_time = self.shoot_cadence
 
 func reset_shoot_cadence():
 	self.shoot_cadence = DEFAULT_SHOOT_SPEED
@@ -156,6 +154,8 @@ func reset():
 
 	anim_tree["parameters/conditions/is_stopped"] = true
 	life = MAX_HEALTH
+	
+	self.effect_states = 0
 	$HealthContainer.update_health(life)
 
 func shoot() -> void:
