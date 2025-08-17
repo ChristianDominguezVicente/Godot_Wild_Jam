@@ -525,7 +525,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ji083")
 animation = &"idle"
 autoplay = "idle"
-frame = 3
+frame = 2
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0eop")
@@ -597,7 +597,7 @@ gravity = Vector2(2000, 980)
 scale_amount_min = 10.0
 scale_amount_max = 15.0
 scale_amount_curve = SubResource("Curve_41rod")
-color = Color(0.788235, 0.52549, 0.52549, 1)
+color = Color(0.87451, 0.211765, 0.486275, 1)
 color_ramp = SubResource("Gradient_1y8qt")
 
 [node name="HitParticles" type="CPUParticles2D" parent="."]
