@@ -4,7 +4,7 @@ extends CharacterBody2D
 const GRAVITY : int = 4200
 const JUMP_SPEED : int = -1800
 const MAX_HEALTH : int = 3
-const DEFAULT_SHOOT_SPEED : float = 0.5
+const DEFAULT_SHOOT_SPEED : float = 0.8
 const DEFAULT_SPEED_MULTIPLICATOR_MOVEMENT : int = 10
 
 @onready var anim_tree : AnimationTree = $AnimationTree

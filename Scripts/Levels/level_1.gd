@@ -228,6 +228,7 @@ func _on_qte_finished(success : bool):
 		qte_instance = null
 	
 	$Music_AudioStreamPlayer.volume_db += 10
-	
-	get_tree().paused = false
+
+	if player_ready:
+		get_tree().paused = false
    
