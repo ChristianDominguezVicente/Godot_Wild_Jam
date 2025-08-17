@@ -13,6 +13,7 @@ config_version=5
 config/name="GodotWildJam"
 run/main_scene="uid://dscf7nn61dead"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/image="uid://u2cpga5g44at"
 config/icon="uid://bcljvjuwg634h"
 
 [audio]
